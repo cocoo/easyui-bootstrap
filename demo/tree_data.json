@@ -1,0 +1,38 @@
+[{
+	"id":1,
+	"text":"Folder1",
+	"iconCls":"icon-ok",
+	"children":[{
+		"id":2,
+		"text":"File1",
+		"checked":true
+	},{
+		"id":3,
+		"text":"Folder2",
+		"state":"open",
+		"children":[{
+			"id":4,
+			"text":"File3",
+			"attributes":{
+				"p1":"value1",
+				"p2":"value2"
+			},
+			"checked":true,
+			"iconCls":"icon-reload"
+		},{
+			"id": 8,
+			"text":"Async Folder",
+			"state":"closed"
+		}]
+	}]
+},{
+	"text":"Languages",
+	"state":"closed",
+	"children":[{
+		"id":"j1",
+		"text":"Java"
+	},{
+		"id":"j2",
+		"text":"C#"
+	}]
+}]

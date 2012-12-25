@@ -1,0 +1,221 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>layout</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Layout</h3>
+<p>Override defaults with $.fn.layout.defaults.</p>
+<p>
+The layout is the container that has up to five regions: north, south, east, west and center.
+The center region panel is required but edge region panel is optional.
+Every edge region panel can be resized by dragging its border, 
+they also can be collapsed by clicking on its collapsing trigger.
+The layout can be nested, thus users can build what complex layout he wants.
+</p>
+<img src="images/layout.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>panel</li>
+	<li>resizable</li>
+</ul>
+
+<h4>Usage Example</h4>
+<h5>Create Layout</h5>
+<p>1. Create Layout via markup.</p>
+<p>Add 'easyui-layout' class to &lt;div/&gt; markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"cc"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-layout"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:600px;height:400px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'north',title:'North&nbsp;Title',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"height:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'south',title:'South&nbsp;Title',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"height:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'east',iconCls:'icon-reload',title:'East',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'west',title:'West',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'center',title:'center&nbsp;title'"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"padding:5px;background:#eee;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-layout" style="display: none;">	&lt;div id="cc" class="easyui-layout" style="width:600px;height:400px;"&gt;
+		&lt;div data-options="region:'north',title:'North Title',split:true" style="height:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'south',title:'South Title',split:true" style="height:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'west',title:'West',split:true" style="width:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+<p>2. Create layout on whole page.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">body</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-layout"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'north',title:'North&nbsp;Title',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"height:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'south',title:'South&nbsp;Title',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"height:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'east',iconCls:'icon-reload',title:'East',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'west',title:'West',split:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'center',title:'center&nbsp;title'"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"padding:5px;background:#eee;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-layout" style="display: none;">	&lt;body class="easyui-layout"&gt;
+		&lt;div data-options="region:'north',title:'North Title',split:true" style="height:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'south',title:'South Title',split:true" style="height:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'west',title:'West',split:true" style="width:100px;"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"&gt;&lt;/div&gt;
+	&lt;/body&gt;
+</textarea>
+<p>3. Create nested layout.</p>
+<p>Notice that the west panel of inner layout is collapsed.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">body</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-layout"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'north'"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"height:100px"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'center'"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-layout"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"fit:true"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'west',collapsed:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:180px"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'center'"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-layout" style="display: none;">	&lt;body class="easyui-layout"&gt;
+		&lt;div data-options="region:'north'" style="height:100px"&gt;&lt;/div&gt;
+		&lt;div data-options="region:'center'"&gt;
+			&lt;div class="easyui-layout" data-options="fit:true"&gt;
+				&lt;div data-options="region:'west',collapsed:true" style="width:180px"&gt;&lt;/div&gt;
+				&lt;div data-options="region:'center'"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+</textarea>
+
+<p>4. Loading content with ajax</p>
+<p>
+The layout is created based on panel. Each region panel provides built-in support for
+asynchronously loading content from URLs. 
+Using the async loading technology, users can make their layout page display more faster.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">body</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-layout"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'west',href:'west_content.php'"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:180px"</span><span>&nbsp;</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"region:'center',href:'center_content.php'"</span><span>&nbsp;</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-layout" style="display: none;">	&lt;body class="easyui-layout"&gt;
+		&lt;div data-options="region:'west',href:'west_content.php'" style="width:180px" &gt;&lt;/div&gt;
+		&lt;div data-options="region:'center',href:'center_content.php'" &gt;&lt;/div&gt;
+	&lt;/body&gt;
+</textarea>
+
+<br>
+<h5>Collpase Layout Panel</h5>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#cc'</span><span>).layout();&nbsp;&nbsp;</span></span></li><li class=""><span><span class="comment">//&nbsp;collapse&nbsp;the&nbsp;west&nbsp;panel</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>$(<span class="string">'#cc'</span><span>).layout(</span><span class="string">'collapse'</span><span>,</span><span class="string">'west'</span><span>);&nbsp;&nbsp;</span></span></li></ol></div><textarea class="js" name="code-layout" style="display: none;">	$('#cc').layout();
+	// collapse the west panel
+	$('#cc').layout('collapse','west');
+</textarea>
+
+<br>
+<h5>Add west region panel with tool buttons</h5>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#cc'</span><span>).layout(</span><span class="string">'add'</span><span>,{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;region:&nbsp;<span class="string">'west'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;180,&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;<span class="string">'West&nbsp;Title'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;split:&nbsp;<span class="keyword">true</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;tools:&nbsp;[{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iconCls:<span class="string">'icon-add'</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler:<span class="keyword">function</span><span>(){alert(</span><span class="string">'add'</span><span>)}&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;},{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iconCls:<span class="string">'icon-remove'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler:<span class="keyword">function</span><span>(){alert(</span><span class="string">'remove'</span><span>)}&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}]&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-layout" style="display: none;">	$('#cc').layout('add',{
+		region: 'west',
+		width: 180,
+		title: 'West Title',
+		split: true,
+		tools: [{
+			iconCls:'icon-add',
+			handler:function(){alert('add')}
+		},{
+			iconCls:'icon-remove',
+			handler:function(){alert('remove')}
+		}]
+	});
+</textarea>
+
+<p>&nbsp;</p>
+<h4>Layout Options</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>fit</td>
+<td>boolean</td>
+<td>
+Set to true to set the layout size fit its parent container.
+When creating layout on 'body' tag, it will be auto maximized to the full size of whole page.
+</td>
+<td>false</td>
+</tr>
+</tbody></table>
+
+<h4>Region Panel Options</h4>
+<p>
+The region panel options is defined in panel component, below is some common and added properties:
+</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>title</td>
+
+<td>string</td>
+<td>The layout panel title text.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>Defines the layout panel position, the value is one of following: north, south, east, west, center.</td>
+<td></td>
+</tr>
+<tr>
+
+<td>border</td>
+<td>boolean</td>
+<td>True to show layout panel border.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>split</td>
+<td>boolean</td>
+<td>True to show a split bar which user can change the panel size.</td>
+<td>false</td>
+
+</tr>
+<tr>
+<td>iconCls</td>
+<td>string</td>
+<td>An icon CSS class to show a icon on panel header.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>href</td>
+<td>string</td>
+<td>An URL to load data from remote site.</td>
+
+<td>null</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>resize</td>
+<td>none</td>
+<td>Set the layout size.</td>
+</tr>
+<tr>
+<td>panel</td>
+<td>region</td>
+<td>Return the specified panel, the 'region' parameter possible values:'north','south','east','west','center'.</td>
+
+</tr>
+<tr>
+<td>collapse</td>
+<td>region</td>
+<td>Collapse the specified panel, the 'region' parameter possible values:'north','south','east','west'.</td>
+</tr>
+<tr>
+<td>expand</td>
+<td>region</td>
+<td>Expand the specified panel, the 'region' parameter possible values:'north','south','east','west'.</td>
+</tr>
+<tr>
+<td>add</td>
+<td>options</td>
+<td>
+Add a specified panel, the options parameter is a config object, see tab panel properties for more details.
+</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>region</td>
+<td>Remove the specified panel, the 'region' parameter possible values:'north','south','east','west'.</td>
+</tr>
+
+</tbody></table>
+
+</div>
+</body>
+</html>

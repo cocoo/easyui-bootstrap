@@ -1,0 +1,65 @@
+<!-- css and js -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<!-- css and js -->
+
+</head>
+<body style="text-align:left">
+	<div style="padding:10px">
+
+<h3>Documentation</h3>
+<p>Each component of easyui has properties, methods and events. Users can extend them easily.</p>
+
+<h4>Properties</h4>
+<p>The properties is defined in jQuery.fn.{plugin}.defaults. For example, the dialog's properties is defined in jQuery.fn.dialog.defaults.</p>
+
+<h4>Events</h4>
+<p>The events(callback functions) is defined in jQuery.fn.{plugin}.defaults also.</p>
+
+<h4>Methods</h4>
+<p>
+The calling method syntax: $('selector').plugin('method', parameter);
+</p>
+<p>Where:</p><p>
+</p><ul>
+	<li><span style="font-style:italic">selector</span> is the jquery object selector.</li>
+	<li><span style="font-style:italic">plugin</span> is the plugin name.</li>
+	<li><span style="font-style:italic">method</span> is the existing method corresponding to the plugin.</li>
+	<li><span style="font-style:italic">parameter</span> is the parameter object, can be a object, string, ...</li>
+</ul>
+<p>
+The methods is defined in jQuery.fn.{plugin}.methods. 
+Each method has two parameters: jq and param. 
+The first parameter 'jq' is required, which refers to that jQuery object. 
+The second parameter 'param' refers to the really parameter that pass through the method. 
+For example, to extend a method named 'mymove' for the dialog component, the code looks like this:
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$.extend($.fn.dialog.methods,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;mymove:&nbsp;<span class="keyword">function</span><span>(jq,&nbsp;newposition){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;jq.each(</span><span class="keyword">function</span><span>(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="keyword">this</span><span>).dialog(</span><span class="string">'move'</span><span>,&nbsp;newposition);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$.extend($.fn.dialog.methods,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;mymove:&nbsp;<span class="keyword">function</span><span>(jq,&nbsp;newposition){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;jq.each(</span><span class="keyword">function</span><span>(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="keyword">this</span><span>).dialog(</span><span class="string">'move'</span><span>,&nbsp;newposition);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><pre class="javascript" name="code-welcome" style="display: none;">$.extend($.fn.dialog.methods, {
+    mymove: function(jq, newposition){
+        return jq.each(function(){
+            $(this).dialog('move', newposition);
+        });
+    }
+});
+</pre>
+<p>Now you can call 'mymove' method to move the dialog to specified position:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).dialog(</span><span class="string">'mymove'</span><span>,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;200,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;100&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).dialog(</span><span class="string">'mymove'</span><span>,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;200,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;100&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><pre class="javascript" name="code-welcome" style="display: none;">$('#dd').dialog('mymove', {
+    left: 200,
+    top: 100
+});
+</pre>
+
+</div>
+</body>
+</html>

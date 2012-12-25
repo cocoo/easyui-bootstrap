@@ -1,0 +1,242 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>combobox</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>ComboBox</h3>
+<p>Extend from $.fn.combo.defaults. Override defaults with $.fn.combobox.defaults.</p>
+<img src="images/combobox.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>combo</li>
+</ul>
+
+<h4>Usage</h4>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">select</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"cc"</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"dept"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:200px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">option</span><span>&nbsp;</span><span class="attribute">value</span><span>=</span><span class="attribute-value">"aa"</span><span class="tag">&gt;</span><span>aitem1</span><span class="tag">&lt;/</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>bitem2</span><span class="tag">&lt;/</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>bitem3</span><span class="tag">&lt;/</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>ditem4</span><span class="tag">&lt;/</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>eitem5</span><span class="tag">&lt;/</span><span class="tag-name">option</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">select</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-combobox" style="display: none;">	&lt;select id="cc" name="dept" style="width:200px;"&gt;
+		&lt;option value="aa"&gt;aitem1&lt;/option&gt;
+		&lt;option&gt;bitem2&lt;/option&gt;
+		&lt;option&gt;bitem3&lt;/option&gt;
+		&lt;option&gt;ditem4&lt;/option&gt;
+		&lt;option&gt;eitem5&lt;/option&gt;
+	&lt;/select&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"cc"</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"dept"</span><span>&nbsp;</span><span class="attribute">value</span><span>=</span><span class="attribute-value">"aa"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-combobox" style="display: none;">	&lt;input id="cc" name="dept" value="aa"&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#cc'</span><span>).combobox({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;url:<span class="string">'combobox_data.json'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;valueField:<span class="string">'id'</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;textField:<span class="string">'text'</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-combobox" style="display: none;">	$('#cc').combobox({
+		url:'combobox_data.json',
+		valueField:'id',
+		textField:'text'
+	});
+</textarea>
+<p>The json data format sample:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>[{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"id"</span><span>:1,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"text"</span><span>:</span><span class="string">"text1"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>},{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"id"</span><span>:2,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"text"</span><span>:</span><span class="string">"text2"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>},{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"id"</span><span>:3,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"text"</span><span>:</span><span class="string">"text3"</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"selected"</span><span>:</span><span class="keyword">true</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>},{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"id"</span><span>:4,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"text"</span><span>:</span><span class="string">"text4"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>},{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"id"</span><span>:5,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"text"</span><span>:</span><span class="string">"text5"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>}]&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-combobox" style="display: none;">	[{
+		"id":1,
+		"text":"text1"
+	},{
+		"id":2,
+		"text":"text2"
+	},{
+		"id":3,
+		"text":"text3",
+		"selected":true
+	},{
+		"id":4,
+		"text":"text4"
+	},{
+		"id":5,
+		"text":"text5"
+	}]
+</textarea>
+
+<h4>Properties</h4>
+<p>The properties extend from combo, below is the added properties for combobox.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+
+<td>valueField</td>
+<td>string</td>
+<td>The underlying data value name to bind to this ComboBox.</td>
+<td>value</td>
+</tr>
+<tr>
+<td>textField</td>
+<td>string</td>
+<td>The underlying data field name to bind to this ComboBox.</td>
+<td>text</td>
+
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>Defines how to load list data when text changed. Set to 'remote' if the combobox loads from server.</td>
+<td>local</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>A URL to load list data from remote.</td>
+
+<td>null</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>The http method to retrieve data.</td>
+<td>post</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+
+<td>The list data to be loaded.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>function</td>
+<td>Defines how to filter the local data when 'mode' setted to 'local'. The function takes two parameters:<br>
+q: the user typed text.<br>
+row: the list row data.<br>
+Return true to allow the row to be displayed.</td>
+
+<td></td>
+</tr>
+<tr>
+<td>formatter</td>
+<td>function</td>
+<td>Defineds how to render the row. The function takes one parameter: row.</td>
+<td></td>
+</tr>
+<tr>
+<td>loader</td>
+<td>function(param,success,error)</td>
+<td>
+Defines how to load data from remote server. Return false can abort this action.
+This function takes following parameters:<br>
+param: the parameter object to pass to remote server.<br>
+success(data): the callback function that will be called when retrieve data successfully.<br>
+error(): the callback function that will be called when failed to retrieve data.
+</td>
+<td>json loader</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<p>The events extend from combo, below is the added events for combobox.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onBeforeLoad</td>
+<td>param</td>
+<td>Fires before a request is made to load data, return false to cancel this load action.</td>
+</tr>
+<tr>
+<td>onLoadSuccess</td>
+
+<td>none</td>
+<td>Fires when remote data is loaded successfully.</td>
+</tr>
+<tr>
+<td>onLoadError</td>
+<td>none</td>
+<td>Fires when remote data load error.</td>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>record</td>
+
+<td>Fires when user select a list item.</td>
+</tr>
+<tr>
+<td>onUnselect</td>
+<td>record</td>
+<td>Fires when user unselect a list item.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<p>The methods extend from combo, below is the added or overridden methods for combobox.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>getData</td>
+<td>none</td>
+<td>Return the loaded data.</td>
+</tr>
+<tr>
+<td>loadData</td>
+<td>data</td>
+
+<td>Load the locale list data.</td>
+</tr>
+<tr>
+<td>reload</td>
+<td>url</td>
+<td>Request the remote list data.</td>
+</tr>
+<tr>
+<td>setValues</td>
+<td>values</td>
+<td>Set the combobox value array.</td>
+
+</tr>
+<tr>
+<td>setValue</td>
+<td>value</td>
+<td>Set the combobox value.</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>none</td>
+<td>Clear the combobox value.</td>
+</tr>
+
+<tr>
+<td>select</td>
+<td>value</td>
+<td>Select the specified item.</td>
+</tr>
+<tr>
+<td>unselect</td>
+<td>value</td>
+<td>Unselect the specified item.</td>
+</tr>
+</tbody></table>
+
+
+</div>	
+</body>
+</html>

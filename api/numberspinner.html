@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>numberspinner</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>NumberSpinner</h3>
+<p>Extend from $.fn.spinner.defaults and $.fn.numberbox.defaults. Override defaults with $.fn.numberspinner.defaults.</p>
+<p>
+The numberspinner is created based on spinner and numberbox.
+It can convert the inputed value into different types such as numeric, percentage, current, etc.
+It also allows the user to scroll to a desired value using the up/down spinner buttons.
+</p>
+<img src="images/numberspinner.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>spinner</li>
+	<li>numberbox</li>
+</ul>
+
+<h4>Usage Example</h4>
+<p>Create numberspinner from markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"ss"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-numberspinner"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:80px;"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">required</span><span>=</span><span class="attribute-value">"required"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"min:10,max:100,editable:false"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-numberspinner" style="display: none;">	&lt;input id="ss" class="easyui-numberspinner" style="width:80px;"
+			required="required" data-options="min:10,max:100,editable:false"&gt;
+</textarea>
+<p>Create numberspinner using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"ss"</span><span>&nbsp;</span><span class="attribute">required</span><span>=</span><span class="attribute-value">"required"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:80px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-numberspinner" style="display: none;">	&lt;input id="ss" required="required" style="width:80px;"&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#ss'</span><span>).numberspinner({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;min:&nbsp;10,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;max:&nbsp;100,&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;editable:&nbsp;<span class="keyword">false</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-numberspinner" style="display: none;">	$('#ss').numberspinner({
+		min: 10,
+		max: 100,
+		editable: false
+	});
+</textarea>
+<p>Create numberspinner and format the number as a currency string.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-numberspinner"</span><span>&nbsp;</span><span class="attribute">value</span><span>=</span><span class="attribute-value">"1234567890"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:150px;"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-options</span><span>=</span><span class="attribute-value">"required:true,precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$'"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-numberspinner" style="display: none;">	&lt;input class="easyui-numberspinner" value="1234567890" style="width:150px;"
+			data-options="required:true,precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$'" /&gt;
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<p>The properties extend from spinner and numberbox.</p>
+
+<h4>Events</h4>
+<p>The events extend from spinner.</p>
+
+<h4>Methods</h4>
+<p>The methods extend from spinner, below is the overridden methods for numberspinner.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>setValue</td>
+<td>value</td>
+
+<td>
+Set the numberspinner value.
+<p>Code example:</p>
+<pre>$('#ss').numberspinner('setValue', 8234725);  // set value
+var v = $('#ss').numberspinner('getValue');  // get value
+alert(v)
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

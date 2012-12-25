@@ -1,0 +1,105 @@
+<!-- css and js -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<!-- css and js -->
+
+</head>
+<body style="text-align:left">
+	<div style="padding:10px">
+
+<div style="padding:10px">
+
+<h3>Documentation</h3>
+<p>Each component of easyui has properties, methods and events. Users can extend them easily.</p>
+
+<h4>Properties</h4>
+<p>The properties is defined in jQuery.fn.{plugin}.defaults. For example, the dialog's properties is defined in jQuery.fn.dialog.defaults.</p>
+
+<h4>Events</h4>
+<p>The events(callback functions) is defined in jQuery.fn.{plugin}.defaults also.</p>
+
+<h4>Methods</h4>
+<p>
+The calling method syntax: $('selector').plugin('method', parameter);
+</p>
+<p>Where:</p><p>
+</p><ul>
+	<li><span style="font-style:italic">selector</span> is the jquery object selector.</li>
+	<li><span style="font-style:italic">plugin</span> is the plugin name.</li>
+	<li><span style="font-style:italic">method</span> is the existing method corresponding to the plugin.</li>
+	<li><span style="font-style:italic">parameter</span> is the parameter object, can be a object, string, ...</li>
+</ul>
+<p>
+The methods is defined in jQuery.fn.{plugin}.methods. 
+Each method has two parameters: jq and param. 
+The first parameter 'jq' is required, which refers to that jQuery object. 
+The second parameter 'param' refers to the really parameter that pass through the method. 
+For example, to extend a method named 'mymove' for the dialog component, the code looks like this:
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$.extend($.fn.dialog.methods,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;mymove:&nbsp;<span class="keyword">function</span><span>(jq,&nbsp;newposition){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;jq.each(</span><span class="keyword">function</span><span>(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="keyword">this</span><span>).dialog(</span><span class="string">'move'</span><span>,&nbsp;newposition);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$.extend($.fn.dialog.methods,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;mymove:&nbsp;<span class="keyword">function</span><span>(jq,&nbsp;newposition){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;jq.each(</span><span class="keyword">function</span><span>(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="keyword">this</span><span>).dialog(</span><span class="string">'move'</span><span>,&nbsp;newposition);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><pre class="javascript" name="code-welcome" style="display: none;">$.extend($.fn.dialog.methods, {
+    mymove: function(jq, newposition){
+        return jq.each(function(){
+            $(this).dialog('move', newposition);
+        });
+    }
+});
+</pre>
+<p>Now you can call 'mymove' method to move the dialog to specified position:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).dialog(</span><span class="string">'mymove'</span><span>,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;200,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;100&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).dialog(</span><span class="string">'mymove'</span><span>,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;200,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;100&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><pre class="javascript" name="code-welcome" style="display: none;">$('#dd').dialog('mymove', {
+    left: 200,
+    top: 100
+});
+</pre>
+
+<h3>Getting Started with jQuery EasyUI</h3>
+<p>
+Download the library and include EasyUI CSS and JavaScript files on your page.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">link</span><span>&nbsp;</span><span class="attribute">rel</span><span>=</span><span class="attribute-value">"stylesheet"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/css"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"easyui/themes/default/easyui.css"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">link</span><span>&nbsp;</span><span class="attribute">rel</span><span>=</span><span class="attribute-value">"stylesheet"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/css"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"easyui/themes/icon.css"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"easyui/jquery-1.7.2.min.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"easyui/jquery.easyui.min.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">link</span><span>&nbsp;</span><span class="attribute">rel</span><span>=</span><span class="attribute-value">"stylesheet"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/css"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"easyui/themes/default/easyui.css"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">link</span><span>&nbsp;</span><span class="attribute">rel</span><span>=</span><span class="attribute-value">"stylesheet"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/css"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"easyui/themes/icon.css"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"easyui/jquery-1.7.2.min.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"easyui/jquery.easyui.min.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-welcome" style="display: none;">&lt;link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="easyui/themes/icon.css"&gt;
+&lt;script type="text/javascript" src="easyui/jquery-1.7.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="easyui/jquery.easyui.min.js"&gt;&lt;/script&gt;
+</textarea>
+<p>
+Once you've included the EasyUI necessary files, you can define an EasyUI component from markup or using JavaScript.
+For example, to define a panel with collapsible functionality, you can write the HTML code like this:
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"p"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-panel"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:500px;height:200px;padding:10px;"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">title</span><span>=</span><span class="attribute-value">"My&nbsp;Panel"</span><span>&nbsp;</span><span class="attribute">iconCls</span><span>=</span><span class="attribute-value">"icon-save"</span><span>&nbsp;</span><span class="attribute">collapsible</span><span>=</span><span class="attribute-value">"true"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;panel&nbsp;content&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"p"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-panel"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:500px;height:200px;padding:10px;"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">title</span><span>=</span><span class="attribute-value">"My&nbsp;Panel"</span><span>&nbsp;</span><span class="attribute">iconCls</span><span>=</span><span class="attribute-value">"icon-save"</span><span>&nbsp;</span><span class="attribute">collapsible</span><span>=</span><span class="attribute-value">"true"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;panel&nbsp;content&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-welcome" style="display: none;">&lt;div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"
+		title="My Panel" iconCls="icon-save" collapsible="true"&gt;
+	The panel content
+&lt;/div&gt;
+</textarea>
+<p>
+When creating a component from markup, the 'data-options' attribute can be used to support HTML5 compliant attribute names since version 1.3.
+So you can rewrite the code above as:
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"p"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-panel"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:500px;height:200px;padding:10px;"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">title</span><span>=</span><span class="attribute-value">"My&nbsp;Panel"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-save',collapsible:true"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;panel&nbsp;content&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"p"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-panel"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:500px;height:200px;padding:10px;"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">title</span><span>=</span><span class="attribute-value">"My&nbsp;Panel"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-save',collapsible:true"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;panel&nbsp;content&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-welcome" style="display: none;">&lt;div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"
+		title="My Panel" data-options="iconCls:'icon-save',collapsible:true"&gt;
+	The panel content
+&lt;/div&gt;
+</textarea>
+<p>
+The code below shows how to create a combobox that bind 'onSelect' event.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-combobox"</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"language"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-options</span><span>="&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url:'combobox_data.json',&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valueField:'id',&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textField:'text',&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelHeight:'auto',&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSelect:function(record){&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(record.text)&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}"&nbsp;<span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-combobox"</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"language"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-options</span><span>="&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url:'combobox_data.json',&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valueField:'id',&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textField:'text',&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelHeight:'auto',&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSelect:function(record){&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(record.text)&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}"&nbsp;<span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-welcome" style="display: none;">&lt;input class="easyui-combobox" name="language"
+		data-options="
+			url:'combobox_data.json',
+			valueField:'id',
+			textField:'text',
+			panelHeight:'auto',
+			onSelect:function(record){
+				alert(record.text)
+			}" /&gt;
+</textarea>
+
+</div>
+</body>
+</html>

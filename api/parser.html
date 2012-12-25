@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>parser</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Parser</h3>
+<h4>Usage</h4>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$.parser.parse();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;parse&nbsp;all&nbsp;the&nbsp;page</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>$.parser.parse(<span class="string">'#cc'</span><span>);&nbsp;&nbsp;</span><span class="comment">//&nbsp;parse&nbsp;the&nbsp;specified&nbsp;node</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre class="JScript" name="code-parser" style="display: none;">	$.parser.parse();		// parse all the page
+	$.parser.parse('#cc');	// parse the specified node
+</pre>
+
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>$.parser.auto</td>
+<td>boolean</td>
+<td>Defines if to auto parse the easyui component.</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>$.parser.onComplete</td>
+
+<td>context</td>
+<td>Fires when parser finishing its parse action.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>$.parser.parse</td>
+<td>context</td>
+<td>Parse the easyui component.</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

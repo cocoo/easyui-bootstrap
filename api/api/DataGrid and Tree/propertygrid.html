@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>propertygrid</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>PropertyGrid</h3>
+<p>Extend from $.fn.datagrid.defaults. Override defaults with $.fn.propertygrid.defaults.</p>
+
+<h4>Dependencies</h4>
+<ul>
+	<li>datagrid</li>
+</ul>
+
+<h4>Usage</h4>
+<p>Create a propertygrid</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">table</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"pg"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">table</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-propertygrid" style="display: none;">	&lt;table id="pg"&gt;&lt;/table&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#pg'</span><span>).propertygrid({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;url:<span class="string">'propertygrid_data.json'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;showGroup:<span class="keyword">true</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-propertygrid" style="display: none;">	$('#pg').propertygrid({
+		url:'propertygrid_data.json',
+		showGroup:true
+	});
+</textarea>
+
+<p>Append a new row to propertygrid.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span class="keyword">var</span><span>&nbsp;row&nbsp;=&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;name:<span class="string">'AddName'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;value:<span class="string">''</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;group:<span class="string">'Marketing&nbsp;Settings'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;editor:<span class="string">'text'</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>};&nbsp;&nbsp;</span></li><li class="alt"><span>$(<span class="string">'#pg'</span><span>).propertygrid(</span><span class="string">'appendRow'</span><span>,row);&nbsp;&nbsp;</span></span></li></ol></div><textarea class="js" name="code-propertygrid" style="display: none;">var row = {
+  name:'AddName',
+  value:'',
+  group:'Marketing Settings',
+  editor:'text'
+};
+$('#pg').propertygrid('appendRow',row);
+</textarea>
+
+<h4>Row Data</h4>
+<p>
+The propertygrid extend from datagrid. 
+It's row data format is same as datagrid.
+As a property row, the following fields are required:<br>
+name: the field name.<br>
+value: the field value to be edited.<br>
+group: the group field value.<br>
+editor: the editor while editing property value.
+</p>
+<p>Row data example:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>{</span><span class="string">"total"</span><span>:4,</span><span class="string">"rows"</span><span>:[&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{<span class="string">"name"</span><span>:</span><span class="string">"Name"</span><span>,</span><span class="string">"value"</span><span>:</span><span class="string">"Bill&nbsp;Smith"</span><span>,</span><span class="string">"group"</span><span>:</span><span class="string">"ID&nbsp;Settings"</span><span>,</span><span class="string">"editor"</span><span>:</span><span class="string">"text"</span><span>},&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{<span class="string">"name"</span><span>:</span><span class="string">"Address"</span><span>,</span><span class="string">"value"</span><span>:</span><span class="string">""</span><span>,</span><span class="string">"group"</span><span>:</span><span class="string">"ID&nbsp;Settings"</span><span>,</span><span class="string">"editor"</span><span>:</span><span class="string">"text"</span><span>},&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{<span class="string">"name"</span><span>:</span><span class="string">"SSN"</span><span>,</span><span class="string">"value"</span><span>:</span><span class="string">"123-456-7890"</span><span>,</span><span class="string">"group"</span><span>:</span><span class="string">"ID&nbsp;Settings"</span><span>,</span><span class="string">"editor"</span><span>:</span><span class="string">"text"</span><span>},&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{<span class="string">"name"</span><span>:</span><span class="string">"Email"</span><span>,</span><span class="string">"value"</span><span>:</span><span class="string">"bill@gmail.com"</span><span>,</span><span class="string">"group"</span><span>:</span><span class="string">"Marketing&nbsp;Settings"</span><span>,</span><span class="string">"editor"</span><span>:{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"type"</span><span>:</span><span class="string">"validatebox"</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"options"</span><span>:{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"validType"</span><span>:</span><span class="string">"email"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}}&nbsp;&nbsp;</span></li><li class="alt"><span>]}&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-propertygrid" style="display: none;">{"total":4,"rows":[
+	{"name":"Name","value":"Bill Smith","group":"ID Settings","editor":"text"},
+	{"name":"Address","value":"","group":"ID Settings","editor":"text"},
+	{"name":"SSN","value":"123-456-7890","group":"ID Settings","editor":"text"},
+	{"name":"Email","value":"bill@gmail.com","group":"Marketing Settings","editor":{
+		"type":"validatebox",
+		"options":{
+			"validType":"email"
+		}
+	}}
+]}
+</textarea>
+
+<h4>Properties</h4>
+<p>The properties extend from datagrid, below is the added properties for propertygrid.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>showGroup</td>
+
+<td>boolean</td>
+<td>Defines if to show property group.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>groupField</td>
+<td>string</td>
+<td>Defines the group field name.</td>
+<td>group</td>
+</tr>
+
+<tr>
+<td>groupFormatter</td>
+<td>function(group,rows)</td>
+<td>
+Defines how to format the group value. This function takes following parameters:<br>
+group: the group field value.<br>
+rows: the rows belong to its group.
+</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<p>The methods extend from datagrid, below is the added methods for propertygrid.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>expandGroup</td>
+<td>groupIndex</td>
+<td>Expand specified group.</td>
+</tr>
+<tr>
+<td>collapseGroup</td>
+<td>groupIndex</td>
+<td>Collapse specified group.</td>
+</tr>
+</tbody></table>
+</div>	
+</body>
+</html>

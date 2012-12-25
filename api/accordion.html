@@ -1,0 +1,236 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>accordion</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Accordion</h3>
+<p>Override defaults with $.fn.accordion.defaults.</p>
+<p>
+The accordion allows you to provide multiple panels and display one at a time.
+Each panel has built-in support for expanding and collapsing.
+Clicking on a panel header to expand or collapse that panel body.
+The panel content can be loaded via ajax by specifying a 'href' property.
+Users can define a panel to be selected.
+If it is not specified, then the first panel is taken by default.
+</p>
+<img src="images/accordion.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>panel</li>
+</ul>
+
+<h4>Usage Example</h4>
+<h5>Create Accordion</h5>
+<p>Create accordion via markup, add 'easyui-accordion' class to &lt;div/&gt; markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"aa"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-accordion"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:300px;height:200px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">title</span><span>=</span><span class="attribute-value">"Title1"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-save'"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"overflow:auto;padding:10px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">h3</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"color:#0099FF;"</span><span class="tag">&gt;</span><span>Accordion&nbsp;for&nbsp;jQuery</span><span class="tag">&lt;/</span><span class="tag-name">h3</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>Accordion&nbsp;is&nbsp;a&nbsp;part&nbsp;of&nbsp;easyui&nbsp;framework&nbsp;for&nbsp;jQuery.&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It&nbsp;lets&nbsp;you&nbsp;define&nbsp;your&nbsp;accordion&nbsp;component&nbsp;on&nbsp;web&nbsp;page&nbsp;more&nbsp;easily.<span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">title</span><span>=</span><span class="attribute-value">"Title2"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-reload',selected:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"padding:10px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content2&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">title</span><span>=</span><span class="attribute-value">"Title3"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content3&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-accordion" style="display: none;">	&lt;div id="aa" class="easyui-accordion" style="width:300px;height:200px;"&gt;
+		&lt;div title="Title1" data-options="iconCls:'icon-save'" style="overflow:auto;padding:10px;"&gt;
+			&lt;h3 style="color:#0099FF;"&gt;Accordion for jQuery&lt;/h3&gt;
+			&lt;p&gt;Accordion is a part of easyui framework for jQuery. 
+			It lets you define your accordion component on web page more easily.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div title="Title2" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;"&gt;
+			content2
+		&lt;/div&gt;
+		&lt;div title="Title3"&gt;
+			content3
+		&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+<p>We can change or recreate accordion later and modify some features.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#aa'</span><span>).accordion({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;animate:<span class="keyword">false</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-accordion" style="display: none;">	$('#aa').accordion({
+		animate:false
+	});
+</textarea>
+
+<br>
+<h5>Refresh Accordion Panel Content</h5>
+<p>Call 'getSelected' method to get the current panel and then we can call 'refresh' method of panel to load new content.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span class="keyword">var</span><span>&nbsp;pp&nbsp;=&nbsp;$(</span><span class="string">'#aa'</span><span>).accordion(</span><span class="string">'getSelected'</span><span>);&nbsp;</span><span class="comment">//&nbsp;get&nbsp;the&nbsp;selected&nbsp;panel</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">if</span><span>&nbsp;(pp){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pp.panel(<span class="string">'refresh'</span><span>,</span><span class="string">'new_content.php'</span><span>);&nbsp;&nbsp;</span><span class="comment">//&nbsp;call&nbsp;'refresh'&nbsp;method&nbsp;to&nbsp;load&nbsp;new&nbsp;content</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-accordion" style="display: none;">	var pp = $('#aa').accordion('getSelected');	// get the selected panel
+	if (pp){
+		pp.panel('refresh','new_content.php');	// call 'refresh' method to load new content
+	}
+</textarea>
+
+<p>&nbsp;</p>
+<h4>Container Options</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>The width of accordion container.</td>
+
+<td>auto</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>The height of accordion container.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>boolean</td>
+
+<td>Set to true to set the accordion container size fit it's parent container.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>border</td>
+<td>boolean</td>
+<td>Defines if to show the border.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>animate</td>
+
+<td>boolean</td>
+<td>Defines if to show animation effect when expand or collapse panel.</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h4>Panel Options</h4>
+<p>The accordion panel options is inhirited from panel, below is the addition properties:</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+
+<td>selected</td>
+<td>boolean</td>
+<td>Set to true to expand the panel.</td>
+<td>false</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>title,index</td>
+<td>Fires when a panel is selected.</td>
+
+</tr>
+<tr>
+<td>onAdd</td>
+<td>title,index</td>
+<td>Fires when a new panel is added.</td>
+</tr>
+<tr>
+<td>onBeforeRemove</td>
+<td>title,index</td>
+<td>Fires before a panel is removed, return false to cancel the remove action.</td>
+</tr>
+
+<tr>
+<td>onRemove</td>
+<td>title,index</td>
+<td>Fires when a panel is removed.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options of accordion.</td>
+</tr>
+
+<tr>
+<td>panels</td>
+<td>none</td>
+<td>Get all panels.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>none</td>
+<td>Resize the accordion.</td>
+</tr>
+<tr>
+
+<td>getSelected</td>
+<td>none</td>
+<td>Get the selected panel.</td>
+</tr>
+<tr>
+<td>getPanel</td>
+<td>which</td>
+<td>Get the specified panel. The 'which' parameter can be the title or index of panel.</td>
+</tr>
+<tr>
+<td>getPanelIndex</td>
+<td>panel</td>
+<td>
+Get the specified panel index. This method is available since version 1.3.
+<p>The example below shows how to get the selected panel index.</p>
+<pre>var p = $('#aa').accordion('getSelected');
+if (p){
+	var index = $('#aa').accordion('getPanelIndex', p);
+	alert(index);
+}
+</pre>
+</td>
+</tr>
+<tr>
+<td>select</td>
+
+<td>which</td>
+<td>Select the specified panel. The 'which' parameter can be the title or index of panel.</td>
+</tr>
+<tr>
+<td>add</td>
+<td>options</td>
+<td>
+Add a new panel. By default the added panel will become selected.
+To add a unselected new panel, pass the 'selected' property and set it to false.
+<p>Code example:</p>
+<pre>$('#aa').accordion('add', {
+	title: 'New Title',
+	content: 'New Content',
+	selected: false
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>which</td>
+
+<td>Remove the specified panel. The 'which' parameter can be the title or index of panel.</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

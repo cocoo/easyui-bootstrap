@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>numberspinner</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>NumberSpinner</h3>
+<p>Extend from $.fn.spinner.defaults and $.fn.numberbox.defaults. Override defaults with $.fn.numberspinner.defaults.</p>
+<img src="images/numberspinner.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>spinner</li>
+	<li>numberbox</li>
+</ul>
+
+<h4>Usage</h4>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"ss"</span><span>&nbsp;</span><span class="attribute">min</span><span>=</span><span class="attribute-value">"10"</span><span>&nbsp;</span><span class="attribute">max</span><span>=</span><span class="attribute-value">"100"</span><span>&nbsp;</span><span class="attribute">required</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:80px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-numberspinner" style="display: none;">	&lt;input id="ss" min="10" max="100" required="true" style="width:80px;"&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#ss'</span><span>).numberspinner({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;editable:<span class="keyword">false</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-numberspinner" style="display: none;">	$('#ss').numberspinner({
+		editable:false
+	});
+</textarea>
+
+<h4>Properties</h4>
+<p>The properties extend from spinner and numberbox.</p>
+
+<h4>Events</h4>
+<p>The events extend from spinner.</p>
+
+<h4>Methods</h4>
+<p>The methods extend from spinner, below is the overridden methods for numberspinner.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>setValue</td>
+<td>value</td>
+
+<td>Set the numberspinner value.</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

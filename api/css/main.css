@@ -1,0 +1,117 @@
+*{
+	font-size:14px;
+}
+html,body{
+	margin:0;
+	padding:0;
+}
+body{
+    font-family:Arial,Helvetica,"Nimbus Sans L",sans-serif;
+	background:#fafafa;
+	text-align:center;
+}
+h3{
+	font-size:20px;
+	font-weight:bold;
+	margin:12px 0;
+}
+h4{
+	font-size:16px;
+	font-weight:bold;
+	color:#CC0000;
+	margin:10px 0;
+}
+h5{
+	font-size:14px;
+	font-weight:bold;
+	color:#990000;
+	margin:5px 0;
+}
+#header{
+	text-align:center;
+	background:#666;
+}
+#header-inner{
+	text-align:left;
+	margin:0 auto;
+	width:960px;
+	padding:10px 0;
+}
+#mainwrap{
+	text-align:center;
+	margin-top:5px;
+}
+#content{
+	text-align:left;
+	width:960px;
+	margin:0 auto;
+	padding:10px;
+	border-radius:5px;
+	border:1px solid #ddd;
+	background:#fff;
+}
+#content img{
+	margin-left:9px;
+}
+#footer{
+	text-align:center;
+	padding:10px;
+}
+#topmenu{
+	text-align:right;
+}
+#topmenu a{
+	display:inline-block;
+	padding:1px 3px;
+	text-decoration:none;
+	color:#fff;
+}
+#topmenu a:hover{
+	text-decoration:underline;
+}
+
+a.download-link{
+	color:#0000ff;
+}
+
+.doc-table{
+	border-collapse:collapse;
+	border-spacing:0;
+	margin-left:9px;
+}
+.doc-table th,.doc-table td{
+	border:1px solid #8CACBB;
+	padding:0.3em 0.7em;
+}
+.doc-table th{
+	background:#eee;
+}
+.doc-table pre{
+	font-family:Verdana;
+	font-size:12px;
+	color:#006600;
+	background:#fafafa;
+	padding:5px;
+}
+
+.icon-base{
+	background:url('images/basic.png') no-repeat;
+}
+.icon-layout{
+	background:url('images/layout.png') no-repeat;
+}
+.icon-menu{
+	background:url('images/menu.png') no-repeat;
+}
+.icon-form{
+	background:url('images/form.png') no-repeat;
+}
+.icon-window{
+	background:url('images/window.png') no-repeat;
+}
+.icon-datagrid{
+	background:url('images/grid.png') no-repeat;
+}
+.icon-gears{
+	background:url('images/gears.png') no-repeat;
+}

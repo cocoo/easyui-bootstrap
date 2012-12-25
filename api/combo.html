@@ -1,0 +1,273 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>combo</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Combo</h3>
+<p>Extend from $.fn.validatebox.defaults. Override defaults with $.fn.combo.defaults.</p>
+<p>
+The combo display a editable text box and drop-down panel on html page.
+It is the base component for building other complex combo components such as combobox, combotree, combogrid, etc.
+</p>
+<img src="images/combo.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>validatebox</li>
+	<li>panel</li>
+</ul>
+
+<h4>Usage</h4>
+<p>
+The combo can be created from a &lt;select&gt; or &lt;input&gt; element using javascript.
+Notice that creating combo from markup is not valid.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"cc"</span><span>&nbsp;</span><span class="attribute">value</span><span>=</span><span class="attribute-value">"001"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-combo" style="display: none;">	&lt;input id="cc" value="001"&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#cc'</span><span>).combo({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;required:<span class="keyword">true</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;multiple:<span class="keyword">true</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-combo" style="display: none;">	$('#cc').combo({
+		required:true,
+		multiple:true
+	});
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<p>The properties extend from validatebox, below is the added properties for combo.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+
+<td>width</td>
+<td>number</td>
+<td>The width of the component.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>panelWidth</td>
+<td>number</td>
+<td>The drop down panel width.</td>
+<td>null</td>
+
+</tr>
+<tr>
+<td>panelHeight</td>
+<td>number</td>
+<td>The drop down panel height.</td>
+<td>200</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>boolean</td>
+<td>Defines if support multiple selection.</td>
+
+<td>false</td>
+</tr>
+<tr>
+<td>separator</td>
+<td>string</td>
+<td>The separator char for text when multiple selection.</td>
+<td>,</td>
+</tr>
+<tr>
+<td>editable</td>
+<td>boolean</td>
+
+<td>Defines if user can type text directly into the field.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>Defines if to disable the field.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>hasDownArrow</td>
+
+<td>boolean</td>
+<td>Defines if to display the down arrow button.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>The default value.</td>
+<td></td>
+</tr>
+<tr>
+<td>delay</td>
+<td>number</td>
+<td>Delay to do searching from the last key input event.</td>
+<td>200</td>
+</tr>
+<tr>
+
+<td>keyHandler</td>
+<td>object</td>
+<td>
+A function called when user press key. The default keyHandler is defined as:
+<pre>keyHandler: {
+	up: function(){},
+	down: function(){},
+	enter: function(){},
+	query: function(q){}
+}
+</pre>
+</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<br>
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+
+</tr>
+<tr>
+<td>onShowPanel</td>
+<td>none</td>
+<td>Fires when drop down panel show.</td>
+</tr>
+<tr>
+<td>onHidePanel</td>
+<td>none</td>
+<td>Fires when drop down panel hide.</td>
+</tr>
+
+<tr>
+<td>onChange</td>
+<td>newValue, oldValue</td>
+<td>Fires when the field value is changed.</td>
+</tr>
+</tbody></table>
+
+<br>
+<h4>Methods</h4>
+<p>The methods extend from validatebox, below is the added methods for combo.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+
+</tr>
+<tr>
+<td>panel</td>
+<td>none</td>
+<td>Return the drop down panel object.</td>
+</tr>
+<tr>
+<td>textbox</td>
+<td>none</td>
+<td>Retun the textbox object.</td>
+</tr>
+
+<tr>
+<td>destroy</td>
+<td>none</td>
+<td>Destroy the component.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>width</td>
+<td>Resize the component width.</td>
+</tr>
+<tr>
+
+<td>showPanel</td>
+<td>none</td>
+<td>Show the drop down panel.</td>
+</tr>
+<tr>
+<td>hidePanel</td>
+<td>none</td>
+<td>Hide the drop down panel.</td>
+</tr>
+<tr>
+<td>disable</td>
+
+<td>none</td>
+<td>Disable the component.</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>none</td>
+<td>Enable the component.</td>
+</tr>
+<tr>
+<td>validate</td>
+<td>none</td>
+
+<td>Validate the input value.</td>
+</tr>
+<tr>
+<td>isValid</td>
+<td>none</td>
+<td>Return the validate result.</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>none</td>
+<td>Clear the component value.</td>
+
+</tr>
+<tr>
+<td>getText</td>
+<td>none</td>
+<td>Get the input text.</td>
+</tr>
+<tr>
+<td>setText</td>
+<td>text</td>
+<td>Set the text value.</td>
+</tr>
+
+<tr>
+<td>getValues</td>
+<td>none</td>
+<td>Get the component value array.</td>
+</tr>
+<tr>
+<td>setValues</td>
+<td>values</td>
+<td>Set the component value array.</td>
+</tr>
+<tr>
+
+<td>getValue</td>
+<td>none</td>
+<td>Get the component value.</td>
+</tr>
+<tr>
+<td>setValue</td>
+<td>value</td>
+<td>Set the component value.</td>
+</tr>
+</tbody></table>
+
+</div>	
+</body>
+</html>

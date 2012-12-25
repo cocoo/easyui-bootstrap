@@ -1,0 +1,177 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>spinner</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Spinner</h3>
+<p>Extend from $.fn.validatebox.defaults. Override defaults with $.fn.spinner.defaults.</p>
+
+<h4>Dependencies</h4>
+<ul>
+	<li>validatebox</li>
+</ul>
+
+<h4>Usage</h4>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"ss"</span><span>&nbsp;</span><span class="attribute">value</span><span>=</span><span class="attribute-value">"2"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-spinner" style="display: none;">	&lt;input id="ss" value="2"&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#ss'</span><span>).spinner({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;required:<span class="keyword">true</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;increment:10&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-spinner" style="display: none;">	$('#ss').spinner({
+		required:true,
+		increment:10
+	});
+</textarea>
+
+<h4>Properties</h4>
+<p>The properties extend from validatebox, below is the added properties for spinner.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>width</td>
+
+<td>number</td>
+<td>The width of this component.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>The initialize value.</td>
+<td></td>
+</tr>
+<tr>
+
+<td>min</td>
+<td>string</td>
+<td>The minimum allowed value.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>max</td>
+<td>string</td>
+<td>The maximum allowed value.</td>
+<td>null</td>
+
+</tr>
+<tr>
+<td>increment</td>
+<td>number</td>
+<td>The increment value when click spinner button.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>editable</td>
+<td>boolean</td>
+<td>Defines if user can type value directly into the field.</td>
+
+<td>true</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>Defines if to disable the field.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>spin</td>
+<td>function(down)</td>
+
+<td>A function called when user click the spinner button.</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onSpinUp</td>
+<td>none</td>
+<td>Fires when user click the up spinner button.</td>
+</tr>
+<tr>
+<td>onSpinDown</td>
+<td>none</td>
+
+<td>Fires when user click the down spinner button.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<p>The methods extend from validatebox, below is the added methods for spinner.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>none</td>
+
+<td>Destroy the spinner component.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>width</td>
+<td>Reset the component width.</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>none</td>
+<td>Enable the component.</td>
+
+</tr>
+<tr>
+<td>disable</td>
+<td>none</td>
+<td>Disable the component.</td>
+</tr>
+<tr>
+<td>getValue</td>
+<td>none</td>
+<td>Get the component value.</td>
+</tr>
+
+<tr>
+<td>setValue</td>
+<td>value</td>
+<td>Set the component value.</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>none</td>
+<td>Clear the component value.</td>
+</tr>
+</tbody></table>
+
+
+</div>	
+</body>
+</html>

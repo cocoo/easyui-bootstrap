@@ -1,0 +1,277 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>pagination</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Pagination</h3>
+<p>Override defaults with $.fn.pagination.defaults.</p>
+<p>
+The pagination allows the user to navigate data by page.
+It supports configurable options for page navigation and page length choices.
+The user can add customize buttons on right of pagination to enhance its functionality.
+</p>
+<img src="images/pagination.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>linkbutton</li>
+</ul>
+
+<h4>Usage Example</h4>
+<p>Create pagination from markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"pp"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-pagination"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"total:2000,pageSize:10"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"background:#efefef;border:1px&nbsp;solid&nbsp;#ccc;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-pagination" style="display: none;">	&lt;div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10" style="background:#efefef;border:1px solid #ccc;"&gt;&lt;/div&gt;
+</textarea>
+<p>Create pagination using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"pp"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"background:#efefef;border:1px&nbsp;solid&nbsp;#ccc;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-pagination" style="display: none;">	&lt;div id="pp" style="background:#efefef;border:1px solid #ccc;"&gt;&lt;/div&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#pp'</span><span>).pagination({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;total:2000,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pageSize:10&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-pagination" style="display: none;">	$('#pp').pagination({
+		total:2000,
+		pageSize:10
+	});
+</textarea>
+<p>
+Let's create ajax pagination with panel and pagination plugins.
+When the user select a new page, the panel will display the corresponding content of specified page.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"content"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-panel"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"height:200px"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-options</span><span>=</span><span class="attribute-value">"href:'show_content.php?page=1'"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-pagination"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"border:1px&nbsp;solid&nbsp;#ccc;"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-options</span><span>="&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total:&nbsp;2000,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageSize:&nbsp;10,&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSelectPage:&nbsp;function(pageNumber,&nbsp;pageSize){&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#content').panel('refresh',&nbsp;'show_content.php?<span class="attribute">page</span><span>='+pageNumber);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}"<span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-pagination" style="display: none;">	&lt;div id="content" class="easyui-panel" style="height:200px"
+			data-options="href:'show_content.php?page=1'"&gt;
+	&lt;/div&gt;
+	&lt;div class="easyui-pagination" style="border:1px solid #ccc;"
+			data-options="
+				total: 2000,
+				pageSize: 10,
+				onSelectPage: function(pageNumber, pageSize){
+					$('#content').panel('refresh', 'show_content.php?page='+pageNumber);
+				}"&gt;
+	&lt;/div&gt;
+</textarea>
+<p>
+The panel on top display the first page content by default.
+When the user navigate the page, the 'onSelectPage' event will be triggered,
+in which we call 'refresh' method for the content panel to load new page content with a new URL parameter.
+</p>
+
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>total</td>
+<td>number</td>
+<td>The total records, which should be setted when pagination is created.</td>
+
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>number</td>
+<td>The page size.</td>
+<td>10</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>number</td>
+
+<td>Show the page number when pagination is created.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageList</td>
+<td>array</td>
+<td>
+User can change the page size. The pageList property defines how many size can be changed.
+<p>Code example:</p>
+<pre>$('#pp').pagination({
+	pageList: [10,20,50,100]
+});
+</pre>
+</td>
+<td>[10,20,30,50]</td>
+</tr>
+<tr>
+<td>loading</td>
+
+<td>boolean</td>
+<td>Defines if data is loading.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>array</td>
+<td>Defines customize buttons, each button contains two properties:<br>
+iconCls: the CSS class which will show a background image<br>
+handler: a handler function when button is clicked
+<p>The customize buttons can be declared from markup:</p>
+<pre>&lt;div class="easyui-pagination" style="border:1px solid #ccc" data-options="
+		total: 114,
+		buttons: [{
+			iconCls:'icon-add',
+			handler:function(){alert('add')}
+		},'-',{
+			iconCls:'icon-save',
+			handler:function(){alert('save')}
+		}]"&gt;
+&lt;/div&gt;
+</pre>
+<p>The customize buttons can also be created using javascript:</p>
+<pre>$('#pp').pagination({
+	total: 114,
+	buttons: [{
+		iconCls:'icon-add',
+		handler:function(){alert('add')}
+	},'-',{
+		iconCls:'icon-save',
+		handler:function(){alert('save')}
+	}]
+});
+</pre>
+</td>
+
+<td>null</td>
+</tr>
+<tr>
+<td>showPageList</td>
+<td>boolean</td>
+<td>Defines if to show page list.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>showRefresh</td>
+<td>boolean</td>
+
+<td>Defines if to show refresh button.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>beforePageText</td>
+<td>string</td>
+<td>Show a label before the input component.</td>
+<td>Page</td>
+</tr>
+<tr>
+<td>afterPageText</td>
+
+<td>string</td>
+<td>Show a label after the input component.</td>
+<td>of {pages}</td>
+</tr>
+<tr>
+<td>displayMsg</td>
+<td>string</td>
+<td>Display a page information.</td>
+<td>Displaying {from} to {to} of {total} items</td>
+</tr>
+
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+
+</tr>
+<tr>
+<td>onSelectPage</td>
+<td>pageNumber, pageSize</td>
+<td>Fires when user select a new page. callback function contains two parameter:<br>
+pageNumber: the new page number<br>
+pageSize: the new page size
+<p>Code example:</p>
+<pre>$('#pp').pagination({
+	onSelectPage:function(pageNumber, pageSize){
+		$(this).pagination('loading');
+		alert('pageNumber:'+pageNumber+',pageSize:'+pageSize);
+		$(this).pagination('loaded');
+	}
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>onBeforeRefresh</td>
+<td>pageNumber, pageSize</td>
+
+<td>Fires before the refresh button is clicked, return false to cancel the refresh action.</td>
+</tr>
+<tr>
+<td>onRefresh</td>
+<td>pageNumber, pageSize</td>
+<td>Fires after refresh.</td>
+</tr>
+<tr>
+<td>onChangePageSize</td>
+<td>pageSize</td>
+<td>Fires when user change the page size.</td>
+
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>loading</td>
+<td>none</td>
+<td>Make the pagination to become loading status.</td>
+</tr>
+
+<tr>
+<td>loaded</td>
+<td>none</td>
+<td>Make the pagination to become loaded status.</td>
+</tr>
+<tr>
+<td>refresh</td>
+<td>options</td>
+<td>
+Refresh and display pager information. This method is available since version 1.3.
+<p>Code example:</p>
+<pre>$('#pp').pagination('refresh');	// refresh the pager bar information
+$('#pp').pagination('refresh',{	// change options and refresh pager bar information
+	total: 114,
+	pageNumber: 6
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>select</td>
+<td>page</td>
+<td>
+Select a new page. The page index start with 1. This method is available since version 1.3.
+<p>Code example:</p>
+<pre>$('#pp').pagination('select');	// refresh the current page
+$('#pp').pagination('select', 2);	// select the second page
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

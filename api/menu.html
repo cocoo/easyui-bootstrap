@@ -1,0 +1,318 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>menu</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Menu</h3>
+<p>Override defaults with $.fn.menu.defaults.</p>
+<p>
+The menu is usually used for context menus. It is the base component for building other menu component such as menubutton and splitbutton.
+It also can be used for both navigation and executing commands.
+
+</p>
+<img src="images/menu.png">
+
+<h4>Usage Example</h4>
+<h5>Create Menu</h5>
+<p>
+Create menu via markup should add 'easyui-menu' class to &lt;div/&gt; markup.
+Each menu item is created via &lt;div/&gt; markup. 
+We can add 'iconCls' attribute to menu item to define a icon that will display on left of menu item.
+Add 'menu-sep' class to menu item will generate a menu seperator.
+
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"mm"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-menu"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:120px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>New</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">span</span><span class="tag">&gt;</span><span>Open</span><span class="tag">&lt;/</span><span class="tag-name">span</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:150px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">b</span><span class="tag">&gt;</span><span>Word</span><span class="tag">&lt;/</span><span class="tag-name">b</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>Excel</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>PowerPoint</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-save'"</span><span class="tag">&gt;</span><span>Save</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"menu-sep"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>Exit</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-menu" style="display: none;">	&lt;div id="mm" class="easyui-menu" style="width:120px;"&gt;
+		&lt;div&gt;New&lt;/div&gt;
+		&lt;div&gt;
+			&lt;span&gt;Open&lt;/span&gt;
+			&lt;div style="width:150px;"&gt;
+				&lt;div&gt;&lt;b&gt;Word&lt;/b&gt;&lt;/div&gt;
+				&lt;div&gt;Excel&lt;/div&gt;
+				&lt;div&gt;PowerPoint&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div data-options="iconCls:'icon-save'"&gt;Save&lt;/div&gt;
+		&lt;div class="menu-sep"&gt;&lt;/div&gt;
+		&lt;div&gt;Exit&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+<p>Create menu programatically and listening the 'onClick' event.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#mm'</span><span>).menu({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;onClick:<span class="keyword">function</span><span>(item){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//...</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-menu" style="display: none;">	$('#mm').menu({
+		onClick:function(item){
+			//...
+		}
+	});
+</textarea>
+
+<br>
+<h5>Show Menu</h5>
+<p>When menu is created, it's hidden and not visible. Call 'show' method to display menu.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#mm'</span><span>).menu(</span><span class="string">'show'</span><span>,&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;left:&nbsp;200,&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;top:&nbsp;100&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-menu" style="display: none;">	$('#mm').menu('show', {
+	  left: 200,
+	  top: 100
+	});
+</textarea>
+
+<p>&nbsp;</p>
+<h4>Menu Item</h4>
+<p>
+The menu item represents an individual item that is displayed within a menu.
+It contains the following properties:
+</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The id attribute of menu item.</td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>The item text.</td>
+<td></td>
+</tr>
+<tr>
+<td>iconCls</td>
+<td>string</td>
+<td>A CSS class to display a 16x16 icon on item left.</td>
+<td></td>
+</tr>
+<tr>
+<td>href</td>
+<td>string</td>
+<td>Set page location while clicking the menu item.</td>
+<td></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>Defines if to disable the menu item.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>function</td>
+<td>The function to be called while clicking the menu item.</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h4>Menu Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>zIndex</td>
+<td>number</td>
+<td>Menu z-index style,increase from it.</td>
+<td>110000</td>
+</tr>
+<tr>
+<td>left</td>
+<td>number</td>
+
+<td>Menu left position.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>top</td>
+<td>number</td>
+<td>Menu top position.</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+<h4>Menu Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+
+<td>onShow</td>
+<td>none</td>
+<td>Fires after menu is showed.</td>
+</tr>
+<tr>
+<td>onHide</td>
+<td>none</td>
+<td>Fires after menu is hidden.</td>
+</tr>
+<tr>
+<td>onClick</td>
+
+<td>item</td>
+<td>
+Fires when the menu item is clicked.
+The example below shows how to process all menu item clicking:
+<pre>&lt;div class="easyui-menu" data-options="onClick:menuHandler" style="width:120px;"&gt;
+	&lt;div data-options="name:'new'"&gt;New&lt;/div&gt;
+	&lt;div data-options="name:'save',iconCls:'icon-save'"&gt;Save&lt;/div&gt;
+	&lt;div data-options="name:'print',iconCls:'icon-print'"&gt;Print&lt;/div&gt;
+	&lt;div class="menu-sep"&gt;&lt;/div&gt;
+	&lt;div data-options="name:'exit'"&gt;Exit&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+	function menuHandler(item){
+		alert(item.name)
+	}
+&lt;/script&gt;
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<h4>Menu Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>show</td>
+<td>pos</td>
+<td>Show a menu on specified position.<br>
+pos parameter have two properties:<br>
+left: the new left position.<br>
+top: the new top position.<br></td>
+
+</tr>
+<tr>
+<td>hide</td>
+<td>none</td>
+<td>Hide a menu.</td>
+</tr>
+<tr>
+<td>getItem</td>
+<td>itemEl</td>
+<td>
+Get the menu item properties that include a 'target' property indicating the item DOM element.
+The example below shows how to get the specified item by id:
+<pre>&lt;div id="mm" class="easyui-menu" style="width:120px"&gt;
+	&lt;div&gt;New&lt;/div&gt;
+	&lt;div id="m-open"&gt;Open&lt;/div&gt;
+	&lt;div&gt;Save&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<pre>var itemEl = $('#m-open')[0];  // the menu item element
+var item = $('#mm').menu('getItem', itemEl);
+console.log(item);
+</pre>
+</td>
+</tr>
+<tr>
+<td>setText</td>
+<td>param</td>
+<td>
+Set the specified menu item text. The 'param' parameter contains two properties:<br>
+target: DOM object, the menu item to be setted.<br>
+text: string, the new text value.
+<p>Code example:</p>
+<pre>var item = $('#mm').menu('findItem', 'Save');
+$('#mm').menu('setText', {
+	target: item.target,
+	text: 'Saving'
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>setIcon</td>
+<td>param</td>
+<td>
+Set the specified menu item icon. The 'param' parameter contains two properties:<br>
+target: DOM object, the menu item.<br>
+iconCls: the new icon class.
+<p>Code example:</p>
+<pre>$('#mm').menu('setIcon', {
+	target: $('#m-open')[0],
+	iconCls: 'icon-closed'
+});
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>findItem</td>
+<td>text</td>
+<td>
+Find the specified menu item, the return object is same as the getItem method.
+<p>Code example:</p>
+<pre>// find 'Open' item and disable it
+var item = $('#mm').menu('findItem', 'Open');
+$('#mm').menu('disableItem', item.target);
+</pre>
+</td>
+</tr>
+<tr>
+<td>appendItem</td>
+<td>options</td>
+<td>
+Append a new menu item, the 'options' parameter indicate the new item properties.
+By default the added item will become a top menu item.
+To append a sub menu item, a 'parent' property should be set to specify the parent item element that already has sub items.
+<p>Code example:</p>
+<pre>// append a top menu item
+$('#mm').menu('appendItem', {
+	text: 'New Item',
+	iconCls: 'icon-ok',
+	onclick: function(){alert('New Item')}
+});
+</pre>
+<pre>// append a sub menu item
+var item = $('#mm').menu('findItem', 'Open');  // find 'Open' item
+$('#mm').menu('appendItem', {
+	parent: item.target,  // the parent item element
+	text: 'Open Excel',
+	iconCls: 'icon-excel',
+	onclick: function(){alert('Open Excel')}
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>removeItem</td>
+<td>itemEl</td>
+<td>Remove the specified menu item.</td>
+</tr>
+<tr>
+<td>enableItem</td>
+<td>itemEl</td>
+<td>Enable the menu item.</td>
+</tr>
+<tr>
+<td>disableItem</td>
+<td>itemEl</td>
+<td>Disable the menu item.</td>
+</tr>
+
+</tbody></table>
+
+</div>
+</body>
+</html>

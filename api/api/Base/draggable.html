@@ -1,0 +1,167 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>draggable</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Draggable</h3>
+<p>Override defaults with $.fn.draggable.defaults.</p>
+
+<h4>Usage</h4>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"dd"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;height:100px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"title"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"background:#ccc;"</span><span class="tag">&gt;</span><span>title</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-draggable" style="display: none;">	&lt;div id="dd" style="width:100px;height:100px;"&gt;
+		&lt;div id="title" style="background:#ccc;"&gt;title&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).draggable({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;handle:<span class="string">'#title'</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="JScript" name="code-draggable" style="display: none;">	$('#dd').draggable({
+		handle:'#title'
+	});
+</textarea>
+
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>proxy</td>
+<td>string,function</td>
+<td>A proxy element to be used when dragging, when set to 'clone', a clone element is used as proxy. If a function is specified, it must return a jQuery object.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>revert</td>
+
+<td>boolean</td>
+<td>If set to true, the element will return to its start position when dragging stops.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>string</td>
+<td>The css cursor when dragging.</td>
+<td>move</td>
+</tr>
+
+<tr>
+<td>deltaX</td>
+<td>number</td>
+<td>The dragged element position x corresponding to current cursor</td>
+<td>null</td>
+</tr>
+<tr>
+<td>deltaY</td>
+<td>number</td>
+<td>The dragged element position y corresponding to current cursor</td>
+
+<td>null</td>
+</tr>
+<tr>
+<td>handle</td>
+<td>selector</td>
+<td>The handle that start the draggable.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+
+<td>True to stop draggable.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>edge</td>
+<td>number</td>
+<td>The drag width in which can start draggable.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>axis</td>
+
+<td>string</td>
+<td>Defines the axis which the dragged elements moves on, available value is 'v' or 'h', when set to null will move across 'v' and 'h' direction.</td>
+<td>null</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onBeforeDrag</td>
+<td>e</td>
+<td>Fires before dragging, return false to cancel this dragging.</td>
+</tr>
+<tr>
+
+<td>onStartDrag</td>
+<td>e</td>
+<td>Fires when the target object start dragging.</td>
+</tr>
+<tr>
+<td>onDrag</td>
+<td>e</td>
+<td>Fires during dragging. Return false will not do dragging actually.</td>
+</tr>
+<tr>
+<td>onStopDrag</td>
+
+<td>e</td>
+<td>Fires when the dragging stops.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options property.</td>
+</tr>
+<tr>
+<td>proxy</td>
+<td>none</td>
+
+<td>Return the drag proxy if the proxy property is setted.</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>none</td>
+<td>Enable the drag action.</td>
+</tr>
+<tr>
+<td>disable</td>
+<td>none</td>
+<td>Disable the drag action.</td>
+
+</tr>
+</tbody></table>
+
+</div>	
+</body>
+</html>

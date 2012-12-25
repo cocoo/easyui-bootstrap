@@ -1,0 +1,198 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>datebox</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>DateBox</h3>
+<p>Extend from $.fn.combo.defaults. Override defaults with $.fn.datebox.defaults</p>
+<p>
+The datebox combines a editable text box with drop-down calendar panel that allows the user to select a date.
+The entered string in the text box can be transformed to a valid date.
+The selected date can also be formatted as expected.
+</p>
+<img src="images/datebox.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>combo</li>
+	<li>calendar</li>
+</ul>
+
+<h4>Usage Example</h4>
+<p>Create datebox from markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"dd"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-datebox"</span><span>&nbsp;</span><span class="attribute">required</span><span>=</span><span class="attribute-value">"required"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">input</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-datebox" style="display: none;">	&lt;input id="dd" type="text" class="easyui-datebox" required="required"&gt;&lt;/input&gt;
+</textarea>
+<p>Create datebox using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"dd"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">input</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-datebox" style="display: none;">	&lt;input id="dd" type="text"&gt;&lt;/input&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).datebox({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;required:<span class="keyword">true</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-datebox" style="display: none;">	$('#dd').datebox({
+		required:true
+	});
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<p>The properties extend from combo, below is the added properties for datebox.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+
+<td>panelWidth</td>
+<td>number</td>
+<td>The drop down calendar panel width.</td>
+<td>180</td>
+</tr>
+<tr>
+<td>panelHeight</td>
+<td>number</td>
+<td>The drop down calendar panel height.</td>
+<td>auto</td>
+
+</tr>
+<tr>
+<td>currentText</td>
+<td>string</td>
+<td>The text to display for the current day button.</td>
+<td>Today</td>
+</tr>
+<tr>
+<td>closeText</td>
+<td>string</td>
+<td>The text to display for the close button.</td>
+
+<td>Close</td>
+</tr>
+<tr>
+<td>okText</td>
+<td>string</td>
+<td>The text to display for the ok button.</td>
+<td>Ok</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+
+<td>When true to disable the field.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>formatter</td>
+<td>function</td>
+<td>
+A function to format the date, the function take a 'date' parameter and return a string value.
+The example below shows how to override the default formatter function.
+<pre>$.fn.datebox.defaults.formatter = function(date){
+	var y = date.getFullYear();
+	var m = date.getMonth()+1;
+	var d = date.getDate();
+	return m+'/'+d+'/'+y;
+}
+</pre>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>parser</td>
+
+<td>function</td>
+<td>
+A function to parse a date string, the function take a 'date' string and return a date value.
+The example below shows how to override the default parser function.
+<pre>$.fn.datebox.defaults.parser = function(s){
+	var t = Date.parse(s);
+	if (!isNaN(t)){
+		return new Date(t);
+	} else {
+		return new Date();
+	}
+}
+</pre>
+</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>date</td>
+<td>
+Fires when user select a date.
+<p>Code example:</p>
+<pre>$('#dd').datebox({
+	onSelect: function(date){
+		alert(date.getFullYear()+":"+(date.getMonth()+1)+":"+date.getDate());
+	}
+});
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<p>The methods extend from combo, below is the overridden methods for datebox.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>calendar</td>
+<td>none</td>
+<td>
+Get the calendar object.
+The example below shows how to get the calendar object and then recreate it.
+<pre>// get the calendar object
+var c = $('#dd').datebox('calendar');
+// set the first day of week to monday
+c.calendar({
+	firstDay: 1
+});
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>setValue</td>
+<td>value</td>
+<td>
+Set the datebox value.
+<p>Code example:</p>
+<pre>$('#dd').datebox('setValue', '6/1/2012');	// set datebox value
+var v = $('#dd').datebox('getValue');	// get datebox value
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>calendar</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Calendar</h3>
+<p>Override defaults with $.fn.calendar.defaults.</p>
+<p>
+The calendar display one month calendar that allows the user to select dates and move to the next or previous month.
+By default, the first day of week is set to sunday.
+It can be changed by setting the value of 'firstDay' property.
+</p>
+<img src="images/calendar.png">
+
+<h4>Usage Example</h4>
+<p>Create calendar from markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"cc"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-calendar"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:180px;height:180px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-calendar" style="display: none;">	&lt;div id="cc" class="easyui-calendar" style="width:180px;height:180px;"&gt;&lt;/div&gt;
+</textarea>
+<p>Create calendar using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"cc"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:180px;height:180px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-calendar" style="display: none;">	&lt;div id="cc" style="width:180px;height:180px;"&gt;&lt;/div&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#cc'</span><span>).calendar({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;current:<span class="keyword">new</span><span>&nbsp;Date()&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-calendar" style="display: none;">	$('#cc').calendar({
+		current:new Date()
+	});
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>The width of calendar component.</td>
+<td>180</td>
+
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>The height of calendar component.</td>
+<td>180</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>boolean</td>
+<td>When true to set the calendar size fit it's parent container.</td>
+
+<td>false</td>
+</tr>
+<tr>
+<td>border</td>
+<td>boolean</td>
+<td>Defines if to show the border.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>firstDay</td>
+<td>number</td>
+<td>Defines the first day of week. Sunday is 0, Monday is 1, ...</td>
+<td>0</td>
+</tr>
+<tr>
+<td>weeks</td>
+<td>array</td>
+
+<td>The list of week to be showed.</td>
+<td>['S','M','T','W','T','F','S']</td>
+</tr>
+<tr>
+<td>months</td>
+<td>array</td>
+<td>The list of month to be showed.</td>
+<td>['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']</td>
+</tr>
+<tr>
+<td>year</td>
+
+<td>number</td>
+<td>
+The year of calendar.
+The example below shows how to create a calendar using the specified year and month.
+<pre>&lt;div class="easyui-calendar" data-options="year:2012,month:6" /&gt;
+</pre>
+</td>
+<td>current year(four digits)</td>
+</tr>
+<tr>
+<td>month</td>
+<td>number</td>
+<td>The month of calendar.</td>
+<td>current month, start with 1</td>
+</tr>
+
+<tr>
+<td>current</td>
+<td>Date</td>
+<td>The current date.</td>
+<td>current date</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>date</td>
+<td>
+Fires when user select a date.
+<p>Code example:</p>
+<pre>$('#cc').calendar({
+	onSelect: function(date){
+		alert(date.getFullYear()+":"+(date.getMonth()+1)+":"+date.getDate());
+	}
+});
+</pre>
+</td>
+
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>none</td>
+<td>Resize the calendar size.</td>
+</tr>
+
+<tr>
+<td>moveTo</td>
+<td>date</td>
+<td>
+Move the calendar to specified date.
+<p>Code example:</p>
+<pre>$('#cc').calendar('moveTo', new Date(2012, 6, 1));
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

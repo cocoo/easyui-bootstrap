@@ -1,0 +1,199 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>slider</title>
+<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Slider</h3>
+<p>Override defaults with $.fn.slider.defaults.</p>
+<img src="images/slider.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>draggable</li>
+</ul>
+
+<h4>Usage</h4>
+<p>
+When using as a form field, create slider from &lt;input&gt; markup.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>&lt;input&nbsp;</span><span class="keyword">class</span><span>=</span><span class="string">"easyui-slider"</span><span>&nbsp;name=</span><span class="string">"font-size"</span><span>&nbsp;value=</span><span class="string">"12"</span><span>&nbsp;showTip=</span><span class="string">"true"</span><span>&nbsp;rule=</span><span class="string">"[0,'|',25,'|',50,'|',75,'|',100]"</span><span>&nbsp;style=</span><span class="string">"width:300px"</span><span>&gt;&nbsp;&nbsp;</span></span></li></ol></div><textarea class="js" name="code-slider" style="display: none;">	&lt;input class="easyui-slider" name="font-size" value="12" showTip="true" rule="[0,'|',25,'|',50,'|',75,'|',100]" style="width:300px"&gt;
+</textarea>
+<p>
+Create slider from &lt;div/&gt; is also allowed but the 'value' attribute is invalid.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>&lt;div&nbsp;</span><span class="keyword">class</span><span>=</span><span class="string">"easyui-slider"</span><span>&nbsp;min=</span><span class="string">"10"</span><span>&nbsp;max=</span><span class="string">"90"</span><span>&nbsp;step=</span><span class="string">"10"</span><span>&nbsp;style=</span><span class="string">"width:300px"</span><span>&gt;&lt;/div&gt;&nbsp;&nbsp;</span></span></li></ol></div><textarea class="js" name="code-slider" style="display: none;">	&lt;div class="easyui-slider" min="10" max="90" step="10" style="width:300px"&gt;&lt;/div&gt;
+</textarea>
+<p>
+Create slider programatically.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>&lt;div&nbsp;id=</span><span class="string">"ss"</span><span>&nbsp;style=</span><span class="string">"height:200px"</span><span>&gt;&lt;/div&gt;&nbsp;&nbsp;</span></span></li><li class=""><span>$(<span class="string">'#ss'</span><span>).slider({&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;<span class="string">'v'</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;tipFormatter:&nbsp;<span class="keyword">function</span><span>(value){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;value&nbsp;+&nbsp;</span><span class="string">'%'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-slider" style="display: none;">	&lt;div id="ss" style="height:200px"&gt;&lt;/div&gt;
+	$('#ss').slider({
+		mode: 'v',
+		tipFormatter: function(value){
+			return value + '%';
+		}
+	});
+</textarea>
+
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>The width of slider.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>The height of slider.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>Indicate what type of slider. Possible values: 'h'(horizontal),'v'(vertical).</td>
+<td>h</td>
+</tr>
+<tr>
+<td>showTip</td>
+<td>boolean</td>
+<td>Defines if to display value information tip.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>Defines if to disable slider.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>The default value.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>min</td>
+<td>number</td>
+<td>The minimum allowed value.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>max</td>
+<td>number</td>
+<td>The maximum allowed value.</td>
+<td>100</td>
+</tr>
+<tr>
+<td>step</td>
+<td>number</td>
+<td>The value to increase or descrease.</td>
+<td>1</td>
+</tr><tr>
+<td>rule</td>
+<td>array</td>
+<td>Display labels beside slider, '|' &mdash; show just line.</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>tipFormatter</td>
+<td>function</td>
+<td>A function to format slider value. Return string value that will display as tip.</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onChange</td>
+<td>newValue, oldValue</td>
+<td>Fires when the field value is changed.</td>
+</tr>
+<tr>
+<td>onSlideStart</td>
+<td>value</td>
+<td>Fires when begin to drag slider.</td>
+</tr>
+<tr>
+<td>onSlideEnd</td>
+<td>value</td>
+<td>Fires when end to drag slider.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the slider options.</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>none</td>
+<td>Destroy the slider object.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>param</td>
+<td>
+Set slider size. The 'param' parameter contains following properties:<br>
+width: the new slider width<br>
+height: the new slider height
+</td>
+</tr>
+<tr>
+<td>getValue</td>
+<td>none</td>
+<td>Get slider value.</td>
+</tr>
+<tr>
+<td>setValue</td>
+<td>value</td>
+<td>Set slider value.</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>none</td>
+<td>Enable the slider component.</td>
+</tr>
+<tr>
+<td>disable</td>
+<td>none</td>
+<td>Disable the slider component.</td>
+</tr>
+</tbody></table>
+
+</div>	
+</body>
+</html>

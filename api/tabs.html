@@ -1,0 +1,468 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>tabs</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Tabs</h3>
+<p>Override defaults with $.fn.tabs.defaults.</p>
+<p>
+The tabs display a collection of panel. It shows only one tab panel at a time.
+Each tab panel has the header title and some mini button tools, including close button and other customized buttons.
+</p>
+<img src="images/tabs.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>panel</li>
+	<li>linkbutton</li>
+</ul>
+
+<h4>Usage Example</h4>
+<h5>Create tabs</h5>
+<p>1. Create tabs via markup</p>
+<p>
+Create tabs from markup is even easier, we don't need to write any JavaScript code.
+Remember to add 'easyui-panel' class to &lt;div/&gt; markup.
+Each tab panel is created via sub &lt;div/&gt; markup, the usage is same as panel.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"tt"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-tabs"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:500px;height:250px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">title</span><span>=</span><span class="attribute-value">"Tab1"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"padding:20px;display:none;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab1&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">title</span><span>=</span><span class="attribute-value">"Tab2"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"closable:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"overflow:auto;padding:20px;display:none;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab2&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">title</span><span>=</span><span class="attribute-value">"Tab3"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-reload',closable:true"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"padding:20px;display:none;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab3&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-tabs" style="display: none;">	&lt;div id="tt" class="easyui-tabs" style="width:500px;height:250px;"&gt;
+		&lt;div title="Tab1" style="padding:20px;display:none;"&gt;
+			tab1
+		&lt;/div&gt;
+		&lt;div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;"&gt;
+			tab2
+		&lt;/div&gt;
+		&lt;div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;display:none;"&gt;
+			tab3
+		&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+
+<p>2. Create tabs programatically</p>
+<p>Now we create tabs programatically, we catch the 'onSelect' event also.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#tt'</span><span>).tabs({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;border:<span class="keyword">false</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;onSelect:<span class="keyword">function</span><span>(title){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(title+<span class="string">'&nbsp;is&nbsp;selected'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-tabs" style="display: none;">	$('#tt').tabs({
+		border:false,
+		onSelect:function(title){
+			alert(title+' is selected');
+		}
+	});
+</textarea>
+
+<h5>Add new tab panel</h5>
+<p>
+Add a new tab panel with mini tools, the mini tools icon(8x8) is placed before the close button.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span class="comment">//&nbsp;add&nbsp;a&nbsp;new&nbsp;tab&nbsp;panel</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>$(<span class="string">'#tt'</span><span>).tabs(</span><span class="string">'add'</span><span>,{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;title:<span class="string">'New&nbsp;Tab'</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;content:<span class="string">'Tab&nbsp;Body'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;closable:<span class="keyword">true</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;tools:[{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iconCls:<span class="string">'icon-mini-refresh'</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler:<span class="keyword">function</span><span>(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="string">'refresh'</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}]&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-tabs" style="display: none;">	// add a new tab panel
+	$('#tt').tabs('add',{
+		title:'New Tab',
+		content:'Tab Body',
+		closable:true,
+		tools:[{
+			iconCls:'icon-mini-refresh',
+			handler:function(){
+				alert('refresh');
+			}
+		}]
+	});
+</textarea>
+<h5>Get the selected Tab</h5>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span class="comment">//&nbsp;get&nbsp;the&nbsp;selected&nbsp;tab&nbsp;panel&nbsp;and&nbsp;its&nbsp;tab&nbsp;object</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">var</span><span>&nbsp;pp&nbsp;=&nbsp;$(</span><span class="string">'#tt'</span><span>).tabs(</span><span class="string">'getSelected'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">var</span><span>&nbsp;tab&nbsp;=&nbsp;pp.panel(</span><span class="string">'options'</span><span>).tab;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;the&nbsp;corresponding&nbsp;tab&nbsp;object&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="js" name="code-tabs" style="display: none;">	// get the selected tab panel and its tab object
+	var pp = $('#tt').tabs('getSelected');
+	var tab = pp.panel('options').tab;    // the corresponding tab object	
+</textarea>
+
+<p>&nbsp;</p>
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>width</td>
+
+<td>number</td>
+<td>The width of tabs container.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>The height of tabs container.</td>
+<td>auto</td>
+</tr>
+
+<tr>
+<td>plain</td>
+<td>boolean</td>
+<td>True to render the tab strip without a background container image.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>boolean</td>
+<td>True to set the size of tabs container to fit it's parent container.</td>
+
+<td>false</td>
+</tr>
+<tr>
+<td>border</td>
+<td>boolean</td>
+<td>True to show tabs container border.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>scrollIncrement</td>
+<td>number</td>
+
+<td>The number of pixels to scroll each time a tab scroll button is pressed.</td>
+<td>100</td>
+</tr>
+<tr>
+<td>scrollDuration</td>
+<td>number</td>
+<td>The number of milliseconds that each scroll animation should last.</td>
+<td>400</td>
+</tr>
+<tr>
+<td>tools</td>
+
+<td>array,selector</td>
+<td>
+The right toolbar. Possible values:<br>
+1. An array indicate the tools, each tool options is same as linkbutton.<br>
+2. A selector point to the &lt;div/&gt; that contains the tools.<br>
+<br>
+Code example:
+<p>Define tools with an array.</p>
+<pre>$('#tt').tabs({
+	tools:[{
+		iconCls:'icon-add',
+		handler:function(){
+			alert('add')
+		}
+	},{
+		iconCls:'icon-save',
+		handler:function(){
+			alert('save')
+		}
+	}]
+});
+</pre>
+<p>Define tools with a exist DOM container.</p>
+<pre>$('#tt').tabs({
+	tools:'#tab-tools'
+});
+&lt;div id="tab-tools"&gt;
+	&lt;a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-add"&gt;&lt;/a&gt;
+	&lt;a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-save"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+</td>
+<td>null</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onLoad</td>
+<td>panel</td>
+<td>Fires when an ajax tab panel finish loading remote data.</td>
+</tr>
+<tr>
+
+<td>onSelect</td>
+<td>title,index</td>
+<td>Fires when user select a tab panel.</td>
+</tr>
+<tr>
+<td>onBeforeClose</td>
+<td>title,index</td>
+<td>
+Fires before the tab panel is closed, return false to cancel this close action.
+The example below shows how to show confirm dialog before closing tab panel.
+<pre>$('#tt').tabs({
+  onBeforeClose: function(title){
+	return confirm('Are you sure you want to close ' + title);
+  }
+});
+// using the async confirm dialog
+$('#tt').tabs({
+  onBeforeClose: function(title,index){
+	var target = this;
+	$.messager.confirm('Confirm','Are you sure you want to close '+title,function(r){
+		if (r){
+			var opts = $(target).tabs('options');
+			var bc = opts.onBeforeClose;
+			opts.onBeforeClose = function(){};  // allowed to close now
+			$(target).tabs('close',index);
+			opts.onBeforeClose = bc;  // restore the event function
+		}
+	});
+	return false;	// prevent from closing
+  }
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>onClose</td>
+
+<td>title,index</td>
+<td>Fires when user close a tab panel.</td>
+</tr>
+<tr>
+<td>onAdd</td>
+<td>title,index</td>
+<td>Fires when a new tab panel is added.</td>
+</tr>
+<tr>
+<td>onUpdate</td>
+<td>title,index</td>
+
+<td>Fires when a tab panel is updated.</td>
+</tr>
+<tr>
+<td>onContextMenu</td>
+<td>e, title,index</td>
+<td>Fires when a tab panel is right clicked.</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+
+<td>Return the tabs options.</td>
+</tr>
+<tr>
+<td>tabs</td>
+<td>none</td>
+<td>Return all tab panels.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>none</td>
+<td>Resize the tabs container and do layout.</td>
+
+</tr>
+<tr>
+<td>add</td>
+<td>options</td>
+<td>
+Add a new tab panel, the options parameter is a config object, see tab panel properties for more details.
+When adding a new tab panel, it will become selected. <br>
+To add a unselected tab panel, remember to set 'selected' property to false.
+<pre>// add a unselected tab panel
+$('#tt').tabs('add',{
+	title: 'new tab',
+	selected: false
+	//...
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td>close</td>
+<td>which</td>
+<td>Close a tab panel, the 'which' parameter can be the title or index of tab panel to be closed.</td>
+</tr>
+
+<tr>
+<td>getTab</td>
+<td>which</td>
+<td>Get the specified tab panel, the 'which' parameter can be the title or index of tab panel.</td>
+</tr>
+<tr>
+<td>getTabIndex</td>
+<td>tab</td>
+<td>Get the specified tab panel index</td>
+</tr>
+<tr>
+<td>getSelected</td>
+<td>none</td>
+<td>
+Get the selected tab panel. The example below shows how to get the index of selected tab panel.
+<pre>var tab = $('#tt').tabs('getSelected');
+var index = $('#tt').tabs('getTabIndex',tab);
+alert(index);
+</pre>
+</td>
+</tr>
+<tr>
+
+<td>select</td>
+<td>which</td>
+<td>Select a tab panel, the 'which' parameter can be the title or index of tab panel.</td>
+</tr>
+<tr>
+<td>exists</td>
+<td>which</td>
+<td>Indicate if the special panel is exists, the 'which' parameter can be the title or index of tab panel.</td>
+</tr>
+<tr>
+<td>update</td>
+
+<td>param</td>
+<td>
+Update the specified tab panel, the param parameter contains two properties:<br>
+tab: the tab panel to be updated.<br>
+options: the panel options.<br>
+<br>
+Code example:
+<pre>// update the selected panel with new title and content
+var tab = $('#tt').tabs('getSelected');  // get selected panel
+$('#tt').tabs('update', {
+	tab: tab,
+	options: {
+		title: 'New Title',
+		href: 'get_content.php'  // the new content URL
+	}
+});
+</pre>
+<pre>// call 'refresh' method for tab panel to update its content
+var tab = $('#tt').tabs('getSelected');  // get selected panel
+tab.panel('refresh', 'get_content.php');
+</pre>
+</td>
+</tr>
+<tr>
+<td>enableTab</td>
+<td>which</td>
+<td>
+Enable the specified tab panel, the 'which' parameter can be the title or index of tab panel.
+This method is available since version 1.3.
+<p>Code example:</p>
+<pre>$('#tt').tabs('enableTab', 1);	// enable the second tab panel
+$('#tt').tabs('enableTab', 'Tab2');	enable the tab panel that has 'Tab2' title
+</pre>
+</td>
+</tr>
+<tr>
+<td>disableTab</td>
+<td>which</td>
+<td>
+Disable the specified tab panel, the 'which' parameter can be the title or index of tab panel.
+This method is available since version 1.3.
+<p>Code example:</p>
+<pre>$('#tt').tabs('disableTab', 1);	// disable the second tab panel.
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<h4>Tab Panel</h4>
+<p>The tab panel properties is defined in panel component, below is some common properties.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The id attribute of tab panel.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>title</td>
+
+<td>string</td>
+<td>The tab panel title text.</td>
+<td></td>
+</tr>
+<tr>
+<td>content</td>
+<td>string</td>
+<td>The tab panel content.</td>
+<td></td>
+</tr>
+<tr>
+<td>href</td>
+
+<td>string</td>
+<td>A URL to load remote content to fill the tab panel.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>boolean</td>
+<td>True to cache the tab panel, valid when href property is setted.</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>iconCls</td>
+<td>string</td>
+<td>An icon CSS class to show on tab panel title.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>The width of tab panel.</td>
+
+<td>auto</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>The height of tab panel.</td>
+<td>auto</td>
+</tr>
+</tbody></table>
+
+<p>Some added properties.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+
+<td>closable</td>
+<td>boolean</td>
+<td>When set to true, the tab panel will show a closable button which can click to close the tab panel.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>selected</td>
+<td>boolean</td>
+<td>When set to true, tab tab panel will be selected.</td>
+<td>false</td>
+
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

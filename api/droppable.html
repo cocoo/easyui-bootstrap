@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>droppable</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>Droppable</h3>
+<p>Override defaults with $.fn.droppable.defaults.</p>
+
+<h4>Usage Example</h4>
+<p>Create a droppable area from markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"dd"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-droppable"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"accept:'#d1,#d3'"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;height:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-droppable" style="display: none;">	&lt;div id="dd" class="easyui-droppable" data-options="accept:'#d1,#d3'" style="width:100px;height:100px;"&gt;&lt;/div&gt;
+</textarea>
+<p>Create a droppable area using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"dd"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;height:100px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-droppable" style="display: none;">	&lt;div id="dd" style="width:100px;height:100px;"&gt;&lt;/div&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#dd'</span><span>).droppable({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;accept:<span class="string">'#d1,#d3'</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-droppable" style="display: none;">	$('#dd').droppable({
+		accept:'#d1,#d3'
+	});
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>accept</td>
+<td>selector</td>
+<td>Determine which draggable element will be accepted</td>
+<td>null</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+
+<td>onDragEnter</td>
+<td>e,source</td>
+<td>Fires when the draggable element is dragged enter. The source parameter indicate the dragged DOM element.</td>
+</tr>
+<tr>
+<td>onDragOver</td>
+<td>e,source</td>
+<td>Fires when the draggable element is dragged over. The source parameter indicate the dragged DOM element.</td>
+</tr>
+<tr>
+<td>onDragLeave</td>
+
+<td>e,source</td>
+<td>Fires when the draggable element is dragged leave. The source parameter indicate the dragged DOM element.</td>
+</tr>
+<tr>
+<td>onDrop</td>
+<td>e,source</td>
+<td>Fires when the draggable element is dropped. The source parameter indicate the dragged DOM element.</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

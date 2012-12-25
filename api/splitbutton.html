@@ -1,0 +1,124 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>splitbutton</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>SplitButton</h3>
+<p>Extend from $.fn.linkbutton.defaults. Override defaults with $.fn.splitbutton.defaults.</p>
+<p>
+Simalar to the menubutton, the splitbutton is also associated with linkbutton and menu.
+The difference between menubutton and splitbutton is that the splitbutton is split into two parts.
+When moving mouse over the splitbutton, a 'split' line will display.
+The menu only display when moving mouse over the right part of splitbutton.
+</p>
+<img src="images/splitbutton.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>menu</li>
+	<li>linkbutton</li>
+</ul>
+
+<h4>Usage</h4>
+<p>Create splitbutton from markup.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"javascript:void(0)"</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"sb"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-splitbutton"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">data-options</span><span>=</span><span class="attribute-value">"menu:'#mm',iconCls:'icon-ok'"</span><span>&nbsp;</span><span class="attribute">onclick</span><span>=</span><span class="attribute-value">"javascript:alert('ok')"</span><span class="tag">&gt;</span><span>Ok</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"mm"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-ok'"</span><span class="tag">&gt;</span><span>Ok</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"iconCls:'icon-cancel'"</span><span class="tag">&gt;</span><span>Cancel</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-splitbutton" style="display: none;">	&lt;a href="javascript:void(0)" id="sb" class="easyui-splitbutton"
+			data-options="menu:'#mm',iconCls:'icon-ok'" onclick="javascript:alert('ok')"&gt;Ok&lt;/a&gt;
+	&lt;div id="mm" style="width:100px;"&gt;
+		&lt;div data-options="iconCls:'icon-ok'"&gt;Ok&lt;/div&gt;
+		&lt;div data-options="iconCls:'icon-cancel'"&gt;Cancel&lt;/div&gt;
+	&lt;/div&gt;
+</textarea>
+<p>Create splitbutton using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"javascript:void(0)"</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"sb"</span><span>&nbsp;</span><span class="attribute">onclick</span><span>="javascript:alert('ok')</span><span class="tag">&gt;</span><span>Ok</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"mm"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:100px;"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>...&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-splitbutton" style="display: none;">	&lt;a href="javascript:void(0)" id="sb" onclick="javascript:alert('ok')&gt;Ok&lt;/a&gt;
+	&lt;div id="mm" style="width:100px;"&gt;
+	...
+	&lt;/div&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#sb'</span><span>).splitbutton({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;iconCls:&nbsp;<span class="string">'icon-ok'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;menu:&nbsp;<span class="string">'#mm'</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-splitbutton" style="display: none;">	$('#sb').splitbutton({
+		iconCls: 'icon-ok',
+		menu: '#mm'
+	});
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<p>The properties extend from linkbutton, below is the added properties for splitbutton.</p>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+
+</tr>
+<tr>
+<td>plain</td>
+<td>boolean</td>
+<td>True to show plain effect.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>menu</td>
+<td>string</td>
+<td>A selector to create a corresponding menu.</td>
+
+<td>null</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>number</td>
+<td>Defines duration time in milliseconds to show menu when hovering the button.</td>
+<td>100</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>disable</td>
+<td>none</td>
+<td>
+Disable the splitbutton. Code example:
+<pre>$('#sb').splitbutton('disable');
+</pre>
+</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>none</td>
+<td>
+Enable the splitbutton. Code example:
+<pre>$('#sb').splitbutton('enable');
+</pre>
+</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>none</td>
+<td>Destroy the splitbutton.</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>

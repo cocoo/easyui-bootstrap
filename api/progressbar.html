@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>progressbar</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/SyntaxHighlighter.css" />
+
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/shBrushXml.js"></script>
+</head>
+<body style="text-align:left">
+<div style="padding:10px">
+
+<h3>ProgressBar</h3>
+<p>Override defaults with $.fn.progressbar.defaults.</p>
+<p>
+The progressbar provides a feedback of showing progress of an long-running operation.
+The progress can be updated to let the user know that some operation is currently executing.
+</p>
+<img src="images/progressbar.png">
+
+<h4>Dependencies</h4>
+<ul>
+	<li>none</li>
+</ul>
+
+<h4>Usage Example</h4>
+<h5>Create ProgressBar</h5>
+<p>
+The ProgressBar component can be created from html markup or programatically.
+Creation from markup is even easier. Add 'easyui-progressbar' class to &lt;div/&gt; markup.
+</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"p"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"easyui-progressbar"</span><span>&nbsp;</span><span class="attribute">data-options</span><span>=</span><span class="attribute-value">"value:60"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:400px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-progressbar" style="display: none;">	&lt;div id="p" class="easyui-progressbar" data-options="value:60" style="width:400px;"&gt;&lt;/div&gt;
+</textarea>
+<p>Create ProgressBar using javascript.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-xml"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"p"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">"width:400px;"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea class="html" name="code-progressbar" style="display: none;">	&lt;div id="p" style="width:400px;"&gt;&lt;/div&gt;
+</textarea>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>$(</span><span class="string">'#p'</span><span>).progressbar({&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;60&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-progressbar" style="display: none;">	$('#p').progressbar({
+		value: 60
+	});
+</textarea>
+
+<br>
+<h5>Get or Set Value</h5>
+<p>We get the current value and set a new value for this component.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"></div></div><ol start="1" class="dp-c"><li class="alt"><span><span class="keyword">var</span><span>&nbsp;value&nbsp;=&nbsp;$(</span><span class="string">'#p'</span><span>).progressbar(</span><span class="string">'getValue'</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">if</span><span>&nbsp;(value&nbsp;&lt;&nbsp;100){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;+=&nbsp;Math.floor(Math.random()&nbsp;*&nbsp;10);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'#p'</span><span>).progressbar(</span><span class="string">'setValue'</span><span>,&nbsp;value);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea class="js" name="code-progressbar" style="display: none;">	var value = $('#p').progressbar('getValue');
+	if (value &lt; 100){
+		value += Math.floor(Math.random() * 10);
+		$('#p').progressbar('setValue', value);
+	}
+</textarea>
+
+<br>
+<h4>Properties</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+<tr>
+<td>width</td>
+<td>string</td>
+<td>Set the progressbar width.</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>The percentage value.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>The text template to be displayed on component.</td>
+<td>{value}%</td>
+</tr>
+</tbody></table>
+
+<h4>Events</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>onChange</td>
+<td>newValue,oldValue</td>
+<td>
+Fires when the value is changed.
+<p>Code example:</p>
+<pre>$('#p').progressbar({
+	onChange: function(value){
+		alert(value)
+	}
+});
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<h4>Methods</h4>
+<table class="doc-table">
+<tbody><tr>
+<th><strong>Name</strong></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>Return the options object.</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>width</td>
+<td>
+Resize the component.
+<p>Code example:</p>
+<pre>$('#p').progressbar('resize');  // resize the bar with original width
+$('#p').progressbar('resize', 350);  // resize the bar using a new width
+</pre>
+</td>
+</tr>
+<tr>
+<td>getValue</td>
+<td>none</td>
+<td>Return the current progress value.</td>
+</tr>
+<tr>
+<td>setValue</td>
+<td>value</td>
+<td>Set a new progress value.</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>
