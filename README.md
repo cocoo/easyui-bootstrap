@@ -1,4 +1,4 @@
-dwz-bootstrap
+easyui-bootstrap
 =============
 
-Dwz的bootstrap主题
+EasyUi的bootstrap主题
