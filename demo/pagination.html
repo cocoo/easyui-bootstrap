@@ -1,51 +1,294 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Pagination - jQuery EasyUI Demo</title>
-	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="../themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="demo.css">
-	<script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+	<title>EasyUi Bootstrap</title>
+	<link rel="stylesheet" type="text/css" href="../themes/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../themes/bootstrap/css/easyui-bootstrap.css">
+
+	<style type="text/css">
+body {
+	padding-top: 30px;
+	background-color: #444;
+}
+</style>
+	<link rel="stylesheet" type="text/css" href="../themes/bootstrap/css/bootstrap-responsive.min.css">
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
 </head>
 <body>
-	<h2>Pagination</h2>
-	<div class="demo-info">
-		<div class="demo-tip icon-tip"></div>
-		<div>You can change page number and page size on pager bar.</div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">EasyUi Bootstrap Bootstrap</a>
+				<div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+						<a target="_black" href="https://github.com/cocoo/easyui-bootstrap" class="navbar-link">Fork in GitHub</a>
+					</p>
+					<ul class="nav">
+						<li class="active">
+							<a href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
 	</div>
-	
-	<div style="margin:10px 0;">
-		<a href="#" class="easyui-linkbutton" onclick="javascript:$('#pp').pagination({loading:false})">Loaded</a>
-		<a href="#" class="easyui-linkbutton" onclick="javascript:$('#pp').pagination({loading:true})">Loading</a>
+	<div id="sidebar">
+		<ul style="display: block;">
+			<li data-toggle="sidebar">
+				<a href="/"> <i class="icon icon-white icon-home"></i>
+					<span>Home</span>
+				</a>
+			</li>
+			<li class="submenu active">
+				<a href="#"> <i class="icon icon-white icon-inbox"></i>
+					<span>Base</span>
+					<span class="label">3</span>
+				</a>
+				<ul>
+					<li data-toggle="sidebar">
+						<a href="pagination.html">pagination</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="searchbox.html">searchbox</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="progressbar.html">progressbar</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#">
+					<i class="icon icon-white icon-th-list"></i>
+					<span>Layout</span>
+					<span class="label">7</span>
+				</a>
+				<ul>
+					<li data-toggle="sidebar">
+						<a href="accordion.html">accordion</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="layout.html">layout</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="layout1.html">layout1</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="layout2.html">layout2</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="panel.html">panel</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="panel2.html">panel1</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="tabs.html">tabs</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#">
+					<i class="icon icon-white icon-tint"></i>
+					<span>Menu and Button</span>
+					<span class="label">4</span>
+				</a>
+				<ul>
+					<li data-toggle="sidebar">
+						<a href="menu.html">menu</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="menubutton.html">menubutton</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="linkbutton.html">linkbutton</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="splitbutton.html">splitbutton</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#">
+					<i class="icon icon-white icon-th-list"></i>
+					<span>Form</span>
+					<span class="label">14</span>
+				</a>
+				<ul>
+					<li data-toggle="sidebar">
+						<a href="form.html">form</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="validatebox.html">validatebox</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="combo.html">combo</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="combobox.html">combobox</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="combotree.html">combotree</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="combogrid.html">combogrid</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="numberbox.html">numberbox</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="numberbox2.html">numberbox1</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="datebox.html">datebox</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="datetimebox.html">datetimebox</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="calendar.html">calendar</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="timespinner.html">timespinner</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="numberspinner.html">numberspinner</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="slider.html">slider</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#">
+					<i class="icon icon-white icon-file"></i>
+					<span>Window</span>
+					<span class="label">3</span>
+				</a>
+				<ul>
+					<li data-toggle="sidebar">
+						<a href="window.html">window</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="dialog.html">dialog</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="messager.html">messager</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#">
+					<i class="icon icon-white icon-signal"></i>
+					<span>DataGrid and Tree</span>
+					<span class="label">7</span>
+				</a>
+				<ul>
+					<li data-toggle="sidebar">
+						<a href="datagrid.html">datagrid</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="propertygrid.html">propertygrid</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="tree.html">tree</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="tree2.html">tree1</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="treegrid.html">treegrid</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="treegrid2.html">treegrid1</a>
+					</li>
+					<li data-toggle="sidebar">
+						<a href="treegrid3.html">treegrid2</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</div>
-	
-	<div id="pp" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;"
-			data-options="
-				total:114,
-				buttons:[{
-					iconCls:'icon-add',
-					handler:function(){
-						alert('add');
-					}
-				},{
-					iconCls:'icon-cut',
-					handler:function(){
-						alert('cut');
-					}
-				},{
-					iconCls:'icon-save',
-					handler:function(){
-						alert('save');
-					}
-				}],
-				onSelectPage:function(pageNumber, pageSize){
-					$(this).pagination('loading');
-					alert('pageNumber:'+pageNumber+',pageSize:'+pageSize);
-					$(this).pagination('loaded');
-				}
-			">
+	<!--/span-->
+	<div id="content">
+		<div id="content-header">
+			<h1>Home</h1>
+			<div class="btn-group" style="width: auto;">
+				<a class="btn btn-large tip-bottom" data-original-title="Manage Files">
+					<i class="icon-file"></i>
+				</a>
+				<a class="btn btn-large tip-bottom" data-original-title="Manage Users">
+					<i class="icon-user"></i>
+				</a>
+				<a class="btn btn-large tip-bottom" data-original-title="Manage Comments">
+					<i class="icon-comment"></i>
+					<span class="label label-important">5</span>
+				</a>
+				<a class="btn btn-large tip-bottom" data-original-title="Manage Orders">
+					<i class="icon-shopping-cart"></i>
+				</a>
+			</div>
+		</div>
+		<div id="breadcrumb">
+			<a href="#" class="tip-bottom">
+				<i class="icon-home"></i>
+				Home
+			</a>
+		</div>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div id="container" class="span12 center" style="text-align: center;">
+					<div class="alert alert-info">
+						You can change page number and page size on pager bar.
+					</div>
+					<div class="btn-toolbar">
+						<div class="btn-group">
+							<a class="btn" href="#" onclick="javascript:$('#pp').pagination({loading:false})">Loaded</a>
+							<a class="btn" href="#" onclick="javascript:$('#pp').pagination({loading:true})">Loading</a>
+						</div>
+					</div>
+					<div id="pp" class="easyui-pagination well" data-options="
+								total:114,
+								buttons:[{
+									iconCls:'icon-add',
+									handler:function(){
+										alert('add');
+									}
+								},{
+									iconCls:'icon-cut',
+									handler:function(){
+										alert('cut');
+									}
+								},{
+									iconCls:'icon-save',
+									handler:function(){
+										alert('save');
+									}
+								}],
+								onSelectPage:function(pageNumber, pageSize){
+									$(this).pagination('loading');
+									alert('pageNumber:'+pageNumber+',pageSize:'+pageSize);
+									$(this).pagination('loaded');
+								}
+							">
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../easyloader.js"></script>
+	<script type="text/javascript" src="../easyui-bootstrap.js"></script>
 </body>
 </html>
